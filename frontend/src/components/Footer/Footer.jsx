@@ -1,0 +1,33 @@
+import React from 'react'
+import './Footer.css'
+import { assets } from '../../assets/assets'
+
+const Footer = () => {
+    return (
+        <div className='footer' id='footer'>
+            <div className="footer-content">
+                <div className="footer-content-left">
+                    <img src={assets.logo_circle} alt="" className="footer-logo" />
+                </div>
+                <div className="footer-content-center">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, laborum! Vel esse optio sint numquam adipisci atque corrupti eos aliquid alias illo similique, veniam iste ipsum eveniet voluptatibus. Molestiae, ullam?</p>
+                    <div className="footer-social-icons">
+                        <a href="https://wa.me/5521979859828"><img src={assets.whatsapp_icon} alt="Ícone WhatsApp"/></a>
+                        <a href="https://www.instagram.com/lolo_daguloseimas/"><img src={assets.instagram_icon} alt="Ícone Instagram"/></a>
+                    </div>
+                </div>
+                <div className="footer-content-right">
+                    <ul>
+                        <li>Home</li>
+                        <li>Sobre Nós</li>
+                        <li>Delivery</li>
+                    </ul>
+                </div>
+            </div>
+            <hr />
+            <p className="footer-copyright">Copiright 2024 © GuloseimasDaLolo.com - Todos os Direitos Reservados</p>
+        </div>
+  )
+}
+
+export default Footer

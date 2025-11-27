@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Trade+Winds&display=swap');
+
+:root{
+  --pink: #ee7f9b;
+  --pink-light: #fd9fb7;
+  --pink-transparent: #fde9eeec;
+  --green: #cbd75d;
+  --green-light: #e0e98c;
+  --green-dark:#a0ac33;
+  --blue: #8dbec9;
+  /*#8dbec9*/
+  --blue-light: #96d0dd;
+  --blue-transparent: #96d0dd28;
+  --gray-light:#dadada;
+  --gray-light2:#ebebeb;
+  --gray: #a5a5a5;
+  --gray-dark: #70676b;
+  --black: #252525;
+  --black-light: #41403c;
+  --black-transparent: #41403c71;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Outfit;
+  scroll-behavior: smooth;
+};
+
+
+
+body{
+  min-height: 100vh;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.app{
+  width: 80%;
+  margin: auto;
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

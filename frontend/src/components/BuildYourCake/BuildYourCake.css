@@ -1,0 +1,126 @@
+@import "../../index.css";
+
+.build-your-cake {
+    padding: 20px;
+  }
+
+.select-cake-base,.select-filling,.order-summary{
+  padding: 20px;
+  padding: 30px;
+}
+
+.content{
+  animation: fadeIn 3s;
+}
+
+.options,.options-filling{
+  display: flex;
+  justify-content: center;
+  padding: 0 2vw;
+  gap: 5vw;
+}
+
+.options-filling{
+  justify-content: space-around;
+  gap: 1vw;
+}
+
+.options-column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .5vw;
+  margin-top: 1vw;
+  background-color: var(--blue-transparent);
+  border-radius: 30px;
+  width: 25%;
+}
+
+.options-column:hover{
+  transform: scale(1.05);
+}
+
+.options-column.selected{
+  transform: scale(1.05);
+}
+
+.bottom{
+  display: flex;
+  justify-content: right;
+  margin-top: .5vw;
+}
+
+.title,.subtitle{
+  font-size: 2em;
+  font-weight: 600;
+  color: var(--pink);
+  margin-left: 2vw;
+}
+
+.title{
+  font-size: 2em;
+  font-weight: 600;
+  color: var(--pink);
+}
+
+.subtitle{
+  font-size: 1em;
+  color: var(--blue);
+}
+
+.section-title{
+  color: var(--black-light);
+  font-size: 24px;
+  margin-left: .5em;
+}
+
+.option{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  background: var(--black-light-transparent);
+  border: 1px solid var(--blue-light);
+  font-size: 15px;
+  color: var(--black-light);
+  padding: 10px 0;
+  margin: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 15vw;
+}
+
+.option:hover {
+  transition-duration: 0.3s;
+  transform: scale(1.05);
+}
+
+.option.selected{
+  background-color: var(--pink-light);
+  border: 1px solid var(--pink-light);
+  color: white;
+  font-weight: 500;
+}
+.next,.prev{
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: max(1vw, 13px) ;
+  padding: .5vw 1.5vw;
+  background-color: var(--green);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 8px;
+}
+
+.prev{
+  background-color: var(--gray);
+}
+
+.next:hover{
+  background-color: var(--green-dark);
+}
+
+.prev:hover{
+  background-color: var(--gray-dark);
+}

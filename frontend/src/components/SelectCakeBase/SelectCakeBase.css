@@ -1,0 +1,70 @@
+@import "../../index.css";
+
+.select-cake-base {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    animation: fadeIn 3s;
+    background-color: var(--pink-transparent);
+    border-radius: 50px;
+  }
+
+  .left-content{
+    margin: 2em;
+  }
+
+  .left-content img{
+    border-radius: 0 200px 0 200px; 
+  }
+  
+  .right-content {
+    display: flex;
+    
+  }
+  
+  .right-content h1, .left-content h2 {
+    margin: 0;
+  }
+
+  .right-content h1{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--pink);
+  }
+  
+  .right-content li {
+    background: transparent;
+    font-size: 15px;
+    color:var(--pink);
+    border: 1px solid #cbd75d;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 50%;
+  }
+  
+  .right-content li:hover {
+    transform: scale(1.05)
+  }
+
+  .right-content li:active{
+    background-color: #e0e98c;
+  }
+
+  .right-content button{
+    border: none;
+    color: white;
+    font-weight: 500;
+    font-size: max(1vw, 13px) ;
+    padding: 1vw 2.3vw;
+    background-color: var(--green-dark);
+    border-radius: 50px;
+  }
+  
+  .column-2{
+    display: flex;
+    justify-content: right;
+    margin-right: 30px;
+  }
+  
