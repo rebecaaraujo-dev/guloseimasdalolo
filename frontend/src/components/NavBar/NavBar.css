@@ -23,6 +23,27 @@
     gap: 40px;
 }
 
+.navbar-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-search-input {
+    padding: 8px 15px;
+    border: 2px solid #cbd75d;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    width: 200px;
+    transition: 0.3s;
+}
+
+.navbar-search-input:focus {
+    border-color: #ee7f9b;
+    width: 250px;
+}
+
 .navbar button{
     background: transparent;
     font-size: 15px;
@@ -53,12 +74,19 @@
 
 .navbar-searchicon .dot{
     position: absolute;
-    min-width: 10px;
-    min-height: 10px;
+    min-width: 18px;
+    min-height: 18px;
     background-color: #ee7f9b;
-    border-radius: 5px;
+    border-radius: 50%;
     top: -8px;
     right: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px;
 }
 
 @media (max-width:1050px){

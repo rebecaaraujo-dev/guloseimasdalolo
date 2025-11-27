@@ -1,6 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import { assets } from '../../assets/assets'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -10,7 +11,7 @@ const Footer = () => {
                     <img src={assets.logo_circle} alt="" className="footer-logo" />
                 </div>
                 <div className="footer-content-center">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, laborum! Vel esse optio sint numquam adipisci atque corrupti eos aliquid alias illo similique, veniam iste ipsum eveniet voluptatibus. Molestiae, ullam?</p>
+                    <p>Venha se apaixonar por nossas guloseimas!</p>
                     <div className="footer-social-icons">
                         <a href="https://wa.me/5521979859828"><img src={assets.whatsapp_icon} alt="Ícone WhatsApp"/></a>
                         <a href="https://www.instagram.com/lolo_daguloseimas/"><img src={assets.instagram_icon} alt="Ícone Instagram"/></a>
@@ -18,9 +19,9 @@ const Footer = () => {
                 </div>
                 <div className="footer-content-right">
                     <ul>
-                        <li>Home</li>
-                        <li>Sobre Nós</li>
-                        <li>Delivery</li>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/About'>Sobre Nós</Link></li>
+                        <li><a href='https://www.ifood.com.br/' target="_blank" rel="noopener noreferrer">ifood</a></li>
                     </ul>
                 </div>
             </div>

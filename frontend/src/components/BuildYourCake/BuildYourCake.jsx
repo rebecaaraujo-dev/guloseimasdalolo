@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './BuildYourCake.css';
 import { StoreContext } from '../../context/StoreContext';
 
 const SelectCakeBase = () => {
   const location = useLocation();
-  const { name } = location.state || {};
+  const navigate = useNavigate();
+  const { name, id } = location.state || {};
 
   const [step, setStep] = useState(1);
   const [selection, setSelection] = useState({
@@ -25,8 +26,9 @@ const SelectCakeBase = () => {
   const handleNext = () => {
     if ((step === 1 && selection.base) || (step === 2 && selection.filling || selection.specialFilling || selection.mousseFilling || selection.compotas)) {
       setStep(prev => prev + 1);
+      setErrorMessage('');
     } else {
-      errorMessage('Por favor, selecione uma opção antes de continuar.');
+      setErrorMessage('Por favor, selecione uma opção antes de continuar.');
     }
   };
 
@@ -135,9 +137,18 @@ const SelectCakeBase = () => {
             </div>
             <div className="bottom">
               <button className='prev' onClick={handlePrev}>Voltar</button>
-              <button className='next' onClick={() => addToCart()}>Adicionar ao Carrinho</button>
+              <button className='next' onClick={() => {
+                if (id) {
+                  const details = {
+                    massa: selection.base,
+                    recheio: selection.filling
+                  };
+                  addToCart(id, details);
+                  navigate('/cart');
+                }
+              }}>Adicionar ao Carrinho</button>
             </div>
-
+            {errorMessage && <p className='error-message'>{errorMessage}</p>}
 
           </div>
         );
