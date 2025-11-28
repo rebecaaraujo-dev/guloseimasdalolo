@@ -124,10 +124,3 @@
 .prev:hover{
   background-color: var(--gray-dark);
 }
-
-.error-message{
-  color: var(--pink);
-  text-align: center;
-  margin-top: 1em;
-  font-weight: 500;
-}
