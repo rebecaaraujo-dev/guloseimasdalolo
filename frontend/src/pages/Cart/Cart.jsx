@@ -42,7 +42,7 @@ const Cart = () => {
                         {cartEntries.map((item) => (
                             <div key={item._id}>
                                 <div className="cart-items-title cart-items-item">
-                                    <p>{item.name}</p>
+                                    <p><strong>{item.name}</strong></p>
                                     <p>R${item.price.toFixed(2)}</p>
                                     <p>{cartItems[item._id]}</p>
                                     <p>R${(item.price * cartItems[item._id]).toFixed(2)}</p>

@@ -1,10 +1,14 @@
 @import '../../index.css';
 
+.menu-page {
+  margin-top: 100px;
+  padding: 0 2rem;
+}
+
 .menu {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  padding: 0 2rem;
 }
 
 .menu h1 {

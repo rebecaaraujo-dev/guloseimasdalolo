@@ -20,7 +20,7 @@
   padding: 20px;
   padding-top: 40px;
   width: 90%;
-  max-width: 900px;
+  max-width: 1000vh;
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -40,8 +40,9 @@
 .cake-options-filling {
   display: flex;
   justify-content: center;
-  padding: 1vw;
+  padding: 0;
   gap: 2rem;
+  height: 25vw;
 }
 
 .cake-options-filling {
@@ -56,31 +57,58 @@
   padding: 1vw 0;
   margin-top: .5rem;
   border-radius: 1rem;
-  width: 30%;
+  min-width: 20%;
+}
+
+.cake-section-options ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.cake-section-options li {
+  margin: 0;
 }
 
 .cake-options-column:nth-child(1) {
   background-color: var(--pink-transparent);
 }
 
-.cake-options-column:nth-child(3) {
-  background-color: var(--blue-transparent);
+.cake-select-filling .cake-options-column:nth-child(1) {
+  background-color: var(--pink-transparent);
+  width: 30%;
+}
+
+.cake-options-column:nth-child(1):hover{
+  background-color: var(--pink-light);
 }
 
 .cake-options-column:nth-child(2) {
   background-color: var(--green-transparent);
 }
 
+.cake-options-column:nth-child(2):hover {
+  background-color: var(--green);
+}
+
+.cake-options-column:nth-child(3) {
+  background-color: var(--blue-transparent);
+}
+
+.cake-options-column:nth-child(3):hover {
+  background-color: var(--blue);
+}
+
 .cake-options-column:nth-child(4) {
   background-color: var(--yellow-transparent);
 }
 
-.cake-options-column:hover {
-  transform: scale(1.05);
-}
-
-.cake-options-column.selected {
-  transform: scale(1.05);
+.cake-options-column:nth-child(4):hover {
+  background-color: var(--yellow);
 }
 
 .cake-bottom {

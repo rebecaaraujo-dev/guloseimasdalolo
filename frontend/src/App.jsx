@@ -7,6 +7,7 @@ import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import BuildYourCake from './components/BuildYourCake/BuildYourCake'
 import Footer from './components/Footer/Footer'
 import About from './pages/About/About'
+import Menu from './pages/Menu/Menu'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
         <NavBar setShowLogin={setShowLogin}/>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/menu' element={<Menu />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/About' element={<About />} />
           <Route path='/order' element={<PlaceOrder />} />

@@ -63,7 +63,10 @@
 .search-clear-btn {
     background: transparent;
     border: none;
-    color: var(--black-light);
+    color: var(--pink-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .navbar-basketicon {
@@ -72,12 +75,16 @@
 
 .navbar-basketicon .dot {
     position: absolute;
-    min-width: 10px;
-    min-height: 10px;
+    min-width: 1rem;
+    min-height: 1rem;
     background-color: #ee7f9b;
-    border-radius: 5px;
-    top: -8px;
-    right: -8px;
+    border-radius: 2rem;
+    top: -0.5rem;
+    right: -1rem;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 600;
+    color: white;
 }
 
 @media (max-width:1050px) {

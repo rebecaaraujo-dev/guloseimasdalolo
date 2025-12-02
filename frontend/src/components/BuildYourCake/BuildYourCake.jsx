@@ -110,63 +110,73 @@ const BuildYourCake = ({ isOpen, onClose, cakeName }) => {
               <p className='subtitle'>Escolha entre Recheio Simples, Especial, Mousse ou Compotas</p>
               <div className='cake-options-filling'>
                 <div className='cake-options-column'>
-                  <h2 className='cake-section-title'>Simples:</h2>
-                  <ul>
-                    <li
-                      className={`cake-option ${selection.filling === 'Chocolate' ? 'selected' : ''}`}
-                      onClick={() => handleSelection('filling', 'Chocolate')}
-                    >
-                      Chocolate
-                    </li>
-                    <li
-                      className={`cake-option ${selection.filling === 'Morango' ? 'selected' : ''}`}
-                      onClick={() => handleSelection('filling', 'Morango')}
-                    >
-                      Morango
-                    </li>
-                    <li
-                      className={`cake-option ${selection.filling === 'Brigadeiro Branco' ? 'selected' : ''}`}
-                      onClick={() => handleSelection('filling', 'Brigadeiro Branco')}
-                    >
-                      Brigadeiro Branco
-                    </li>
-                    <li
-                      className={`cake-option ${selection.filling === 'Limão' ? 'selected' : ''}`}
-                      onClick={() => handleSelection('filling', 'Limão')}
-                    >
-                      Limão
-                    </li>
-                    <li
-                      className={`cake-option ${selection.filling === 'Maracujá' ? 'selected' : ''}`}
-                      onClick={() => handleSelection('filling', 'Maracujá')}
-                    >
-                      Maracujá
-                    </li>
-                    <li
-                      className={`cake-option ${selection.filling === 'Beijinho' ? 'selected' : ''}`}
-                      onClick={() => handleSelection('filling', 'Beijinho')}
-                    >
-                      Beijinho
-                    </li>
-                    <li
-                      className={`cake-option ${selection.filling === 'Creme Belga' ? 'selected' : ''}`}
-                      onClick={() => handleSelection('filling', 'Creme Belga')}
-                    >
-                      Creme Belga
-                    </li>
-                    <li
-                      className={`cake-option ${selection.filling === 'Creme Belga de Côco' ? 'selected' : ''}`}
-                      onClick={() => handleSelection('filling', 'Creme Belga de Côco')}
-                    >
-                      Creme Belga de Côco
-                    </li>
-                    <li
-                      className={`cake-option ${selection.filling === 'Ninho' ? 'selected' : ''}`}
-                      onClick={() => handleSelection('filling', 'Ninho')}
-                    >
-                      Ninho
-                    </li>
-                  </ul>
+                  <div>
+                    <h2 className='cake-section-title'>Simples:</h2>
+                  </div>
+                  <div className="cake-section-options">
+                    <ul>
+                      <li
+                        className={`cake-option ${selection.filling === 'Chocolate' ? 'selected' : ''}`}
+                        onClick={() => handleSelection('filling', 'Chocolate')}
+                      >
+                        Chocolate
+                      </li>
+                      <li
+                        className={`cake-option ${selection.filling === 'Morango' ? 'selected' : ''}`}
+                        onClick={() => handleSelection('filling', 'Morango')}
+                      >
+                        Morango
+                      </li>
+                      <li
+                        className={`cake-option ${selection.filling === 'Brigadeiro' ? 'selected' : ''}`}
+                        onClick={() => handleSelection('filling', 'Brigadeiro')}
+                      >
+                        Brigadeiro
+                      </li>
+                      <li
+                        className={`cake-option ${selection.filling === 'Brigadeiro Branco' ? 'selected' : ''}`}
+                        onClick={() => handleSelection('filling', 'Brigadeiro Branco')}
+                      >
+                        Brigadeiro Branco
+                      </li>
+                      <li
+                        className={`cake-option ${selection.filling === 'Limão' ? 'selected' : ''}`}
+                        onClick={() => handleSelection('filling', 'Limão')}
+                      >
+                        Limão
+                      </li>
+                      <li
+                        className={`cake-option ${selection.filling === 'Maracujá' ? 'selected' : ''}`}
+                        onClick={() => handleSelection('filling', 'Maracujá')}
+                      >
+                        Maracujá
+                      </li>
+                      <li
+                        className={`cake-option ${selection.filling === 'Beijinho' ? 'selected' : ''}`}
+                        onClick={() => handleSelection('filling', 'Beijinho')}
+                      >
+                        Beijinho
+                      </li>
+                      <li
+                        className={`cake-option ${selection.filling === 'Creme Belga' ? 'selected' : ''}`}
+                        onClick={() => handleSelection('filling', 'Creme Belga')}
+                      >
+                        Creme Belga
+                      </li>
+                      <li
+                        className={`cake-option ${selection.filling === 'Creme Belga de Côco' ? 'selected' : ''}`}
+                        onClick={() => handleSelection('filling', 'Creme Belga de Côco')}
+                      >
+                        Creme Belga de Côco
+                      </li>
+                      <li
+                        className={`cake-option ${selection.filling === 'Ninho' ? 'selected' : ''}`}
+                        onClick={() => handleSelection('filling', 'Ninho')}
+                      >
+                        Ninho
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <div className='cake-options-column'>
                   <h2 className='cake-section-title'>Especiais:</h2>

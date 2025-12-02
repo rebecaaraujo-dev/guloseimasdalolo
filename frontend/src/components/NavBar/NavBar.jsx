@@ -8,7 +8,8 @@ export const NavBar = ({ setShowLogin }) => {
 
     const [menu, setMenu] = useState("home");
     const [showSearch, setShowSearch] = useState(false);
-    const { searchTerm, setSearchTerm } = useContext(StoreContext);
+    const { searchTerm, setSearchTerm, cartItems, customCakes } = useContext(StoreContext);
+    const cartCount = Object.values(cartItems).reduce((sum, qty) => sum + (qty > 0 ? qty : 0), 0) + (customCakes ? customCakes.length : 0);
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -25,7 +26,7 @@ export const NavBar = ({ setShowLogin }) => {
             <Link to='/'><img src={assets.logo} alt="" className="logo" /></Link>
             <ul className="navbar-menu">
                 <Link to='/' onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>home</Link>
-                <a href="#explore-menu" onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>menu</a>
+                <Link to='/menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>menu</Link>
                 <a href='https://www.ifood.com.br/' target="_blank" onClick={() => setMenu("ifood")} className={menu === "ifood" ? "active" : ""}>ifood</a>
                 <Link to='/About' onClick={() => setMenu("contato")} className={menu === "contato" ? "active" : ""}>contato</Link>
             </ul>
@@ -56,20 +57,21 @@ export const NavBar = ({ setShowLogin }) => {
                             autoFocus={showSearch}
                             onChange={e => setSearchTerm(e.target.value)}
                         />
-                        {searchTerm && (
-                            <button 
-                                type="button" 
-                                className="search-clear-btn"
-                                onClick={handleClearSearch}
-                            >
-                                x
-                            </button>
-                        )}
+                        <button 
+                            type="button" 
+                            className="search-clear-btn"
+                            onClick={handleClearSearch}
+                            style={{ display: 'inline-block' }}
+                        >
+                            x
+                        </button>
                     </form>
                 )}
                 <div className="navbar-basketicon">
                     <Link to={'/cart'}><img src={assets.basket_icon} alt="" /></Link>
-                    <div className="dot"></div>
+                    <div className="dot">
+                        {cartCount > 0 ? cartCount : null}
+                    </div>
                 </div>
             </div>
         </div>

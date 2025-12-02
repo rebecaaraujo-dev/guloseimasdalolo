@@ -20,9 +20,15 @@ const SimpleItemPopup = ({ isOpen, onClose, item, toppings = [], showNotes = tru
     if (!isNaN(val) && val > 0) setQuantity(val);
   };
   const handleAddToCart = () => {
-    for (let i = 0; i < quantity; i++) addToCart(item._id, { toppings: selectedToppings, notes });
-    if (onClose) onClose();
-    navigate('/cart');
+    for (let i = 0; i < quantity; i++) addToCart(item._id, { toppings, notes });
+    if (onClose) {
+      onClose();
+      setTimeout(() => {
+        navigate('/cart');
+      }, 100); // Delay navigation to ensure popup closes first
+    } else {
+      navigate('/cart');
+    }
   };
 
   return (
