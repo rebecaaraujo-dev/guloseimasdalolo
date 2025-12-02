@@ -1,6 +1,7 @@
 
 import React, { useState, useContext } from 'react';
 import '../Popup/Popup.css';
+import './SimpleItemPopup.css';
 import { StoreContext } from '../../context/StoreContext';
 import { useNavigate } from 'react-router-dom';
 import Popup from '../Popup/Popup';

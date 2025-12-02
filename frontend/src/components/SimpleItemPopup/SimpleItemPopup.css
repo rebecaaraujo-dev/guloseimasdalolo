@@ -55,7 +55,7 @@
 }
 
 .qty-input {
-  width: 50px;
+  width: 3rem;
   text-align: center;
   font-size: 1.1rem;
   border: 1px solid var(--gray-light);

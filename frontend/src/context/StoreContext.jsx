@@ -8,6 +8,7 @@ const StoreContextProvider = (props) =>{
 
     const [cartItems,setCartItems] = useState({});
     const [customCakes, setCustomCakes] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
 
     const addToCart = (itemId) => {
         if (!cartItems[itemId]) {
@@ -36,7 +37,9 @@ const StoreContextProvider = (props) =>{
         addToCart,
         removeFromCart,
         customCakes,
-        addCustomCakeToCart
+        addCustomCakeToCart,
+        searchTerm,
+        setSearchTerm
     }
     
     return (
