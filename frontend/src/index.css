@@ -3,14 +3,18 @@
 :root{
   --pink: #ee7f9b;
   --pink-light: #fd9fb7;
-  --pink-transparent: #fde9eeec;
+  --pink-transparent: #fcc5d3a6;
+  --pink-dark: #ec567c;
   --green: #cbd75d;
   --green-light: #e0e98c;
+  --green-transparent: #dde595d1;
   --green-dark:#a0ac33;
+  --yellow: #fee471;
+  --yellow-transparent: #fee4719a;
   --blue: #8dbec9;
   /*#8dbec9*/
   --blue-light: #96d0dd;
-  --blue-transparent: #96d0dd28;
+  --blue-transparent: #96d0dd54;
   --gray-light:#dadada;
   --gray-light2:#ebebeb;
   --gray: #a5a5a5;

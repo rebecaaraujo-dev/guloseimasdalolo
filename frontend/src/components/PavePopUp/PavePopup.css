@@ -1,0 +1,120 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content-pave {
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 40px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: var(--gray);
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.close-button:hover {
+  background: var(--black);
+}
+
+.cake-name-emphasis {
+  color: var(--pink-dark);
+  font-weight: 600;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: 600;
+  color: var(--pink);
+}
+
+.subtitle {
+  font-size: 1em;
+  color: var(--black-light);
+}
+
+.options {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.option {
+  background: var(--black-light-transparent);
+  border: 1px solid var(--black-light);
+  font-size: 15px;
+  color: var(--black-light);
+  padding: 10px 0;
+  margin: .5rem 0;
+  border-radius: 50px;
+  cursor: pointer;
+  min-width: 120px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.option.selected {
+  background-color: var(--black);
+  border: 1px solid var(--black);
+  color: white;
+  font-weight: 500;
+}
+
+.bottom {
+  display: flex;
+  justify-content: right;
+  margin-top: 2rem;
+}
+
+.next {
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: max(1vw, 13px);
+  padding: .5vw 1.5vw;
+  background-color: var(--black);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 8px;
+}
+
+.next:disabled {
+  background-color: var(--gray-light);
+  color: var(--gray);
+  cursor: not-allowed;
+}

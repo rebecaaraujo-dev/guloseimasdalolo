@@ -5,7 +5,9 @@ export const StoreContext = createContext(null)
 
 const StoreContextProvider = (props) =>{
 
+
     const [cartItems,setCartItems] = useState({});
+    const [customCakes, setCustomCakes] = useState([]);
 
     const addToCart = (itemId) => {
         if (!cartItems[itemId]) {
@@ -23,12 +25,18 @@ const StoreContextProvider = (props) =>{
         console.log(cartItems);
     },[cartItems])
 
+    const addCustomCakeToCart = (cake) => {
+        setCustomCakes(prev => [...prev, cake]);
+    }
+
     const contextValue = {
         food_list,
         cartItems,
         setCartItems,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        customCakes,
+        addCustomCakeToCart
     }
     
     return (

@@ -26,24 +26,6 @@ import food_11 from './food_11.png'
 import food_12 from './food_12.png'
 import food_13 from './food_13.png'
 import food_14 from './food_14.png'
-import food_15 from './food_15.png'
-import food_16 from './food_16.png'
-import food_17 from './food_17.png'
-import food_18 from './food_18.png'
-import food_19 from './food_19.png'
-import food_20 from './food_20.png'
-import food_21 from './food_21.png'
-import food_22 from './food_22.png'
-import food_23 from './food_23.png'
-import food_24 from './food_24.png'
-import food_25 from './food_25.png'
-import food_26 from './food_26.png'
-import food_27 from './food_27.png'
-import food_28 from './food_28.png'
-import food_29 from './food_29.png'
-import food_30 from './food_30.png'
-import food_31 from './food_31.png'
-import food_32 from './food_32.png'
 
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
@@ -97,26 +79,27 @@ export const menu_list = [
         menu_name: "Brownies",
         menu_image: menu_3
     },
-    {
-        menu_name: "Donuts",
-        menu_image: menu_4
-    },
-    {
-        menu_name: "Ovos",
-        menu_image: menu_5
-    },
-    {
-        menu_name: "Panetones",
-        menu_image: menu_6
-    },
+    // {
+    //     menu_name: "Donuts",
+    //     menu_image: menu_4
+    // },
+    // {
+    //     menu_name: "Ovos",
+    //     menu_image: menu_5
+    // },
+    // {
+    //     menu_name: "Panetones",
+    //     menu_image: menu_6
+    // },
     {
         menu_name: "Sobremesas",
         menu_image: menu_7
     },
-    {
-        menu_name: "Assados",
-        menu_image: menu_8
-    }]
+    // {
+    //     menu_name: "Assados",
+    //     menu_image: menu_8
+    // }
+    ]
 
 export const food_list = [
     {
@@ -124,229 +107,100 @@ export const food_list = [
         name: "Bolo Temático",
         image: food_1,
         price: 100,
-        description: "Personalizado para qualquer ocasião, nossos bolos temáticos são verdadeiras obras de arte, decorados para transformar qualquer festa em um evento inesquecível.",
+        description: "Perfeito para qualquer ocasião, feito sob medida e decorado com todo carinho.",
         category: "Bolos"
     },
     {
         _id: "2",
         name: "Naked Cake",
         image: food_2,
-        price: 50,
-        description: "Deliciosamente rústico, é um bolo sem cobertura externa, exibindo camadas generosas de massa e recheio, adornado com frutas frescas e flores comestíveis.",
+        price: 100,
+        description: "Visual rústico, massa fofinha e recheio generoso. Finalizado com frutas frescas.",
         category: "Bolos"
     }, {
         _id: "3",
         name: "Bento Cake",
         image: food_3,
-        price: 16,
-        description: "Compacto e encantador, é um pequeno bolo decorado, perfeito para presentear ou para uma sobremesa especial. Feito amor e decorado com carinho.",
+        price: 25,
+        description: "Pequeno, fofinho e personalizado. Ideal para presentear ou adoçar o dia.",
         category: "Bolos"
     }, {
         _id: "4",
         name: "Caseirinho",
         image: food_4,
-        price: 24,
-        description: "Um bolo pequeno e aconchegante, o caseirinho traz o sabor e a simplicidade das receitas caseiras, perfeito para o dia a dia ou pequenos encontros.",
+        price: 25,
+        description: "Sabor de casa! Bolo simples, macio e perfeito para qualquer momento.",
         category: "Bolos"
     }, {
         _id: "5",
         name: "Bolo Vulcão",
         image: food_5,
-        price: 25.00,
-        description: "6 a 8 fatias",
+        price: 25,
+        description: "Clássico irresistível com muito recheio escorrendo. Serve de 6 a 8 fatias.",
         category: "Bolos"
     }, {
         _id: "6",
-        name: "Bolo Vulcão",
+        name: "Cupcake",
         image: food_6,
-        price: 50,
-        description: "10 a 15 fatias",
+        price: 20,
+        description: "Fofo, delicado e cheio de sabor. Perfeito para festas ou para matar a vontade de doce.",
         category: "Bolos"
     }, {
         _id: "7",
-        name: "Cupcake",
+        name: "Brownie Doce de Leite",
         image: food_7,
-        price: 20,
-        description: "Pequenos e encantadores, nossos cupcakes vêm em diversos sabores e decorações, perfeitos para qualquer ocasião, desde festas até uma sobremesa rápida.",
-        category: "Bolos"
+        price: 10,
+        description: "Chocolate intenso com recheio cremoso de doce de leite. Pura indulgência.",
+        category: "Brownies"
     }, {
         _id: "8",
-        name: "Brownie Doce de Leite",
+        name: "Brownie Brigadeiro",
         image: food_8,
-        price: 15,
-        description: "Uma delícia irresistível, nosso brownie de chocolate intenso é recheado com doce de leite cremoso, proporcionando uma explosão de sabor a cada mordida.",
+        price: 10,
+        description: "Brownie macio com brigadeiro cremoso. Feito para os amantes de chocolate.",
         category: "Brownies"
     }, {
         _id: "9",
-        name: "Brownie Brigadeiro",
-        image: food_9,
-        price: 14,
-        description: "Combinação perfeita para os amantes de chocolate, este brownie é recheado com brigadeiro cremoso, tornando cada pedaço uma experiência única e indulgente.",
-        category: "Brownies"
-    }, {
-        _id: "10",
         name: "Mini Brownie",
-        image: food_10,
-        price: 22,
-        description: "Pequenos na aparência, mas grandes no sabor, os mini brownies são perfeitos para quem quer um doce rápido e delicioso, mantendo sempre a qualidade e intensidade.",
+        image: food_9,
+        price: 10,
+        description: "Pequenos no tamanho, enormes no sabor. Uma opção prática e deliciosa.",
         category: "Brownies"
+     }, {
+        _id: "10",
+        name: "Pavê",
+        image: food_10,
+        price: 50,
+        description: "Camadas cremosas com biscoito e recheio no sabor da sua escolha — tradicional, pêssego ou morango. Leve, geladinho e sempre irresistível.",
+        category: "Sobremesas"
     }, {
         _id: "11",
-        name: "Donuts",
+        name: "Banoffee",
         image: food_11,
-        price: 10,
-        description: "Macios e fofinhos, nossos donuts são fritos na medida certa e cobertos com uma variedade de glazes e confeitos, oferecendo um deleite doce a cada mordida.",
-        category: "Donuts"
+        price: 50,
+        description: "Base crocante, banana fresquinha e doce de leite cremoso. Um clássico que não tem erro.",
+        category: "Sobremesas"
     }, {
         _id: "12",
-        name: "Caribe",
+        name: "Torta",
         image: food_12,
-        price: 12,
-        description: "Uma verdadeira indulgência, nossos ovos de páscoa são recheados com cremes deliciosos, proporcionando uma experiência doce e surpreendente.",
-        category: "Ovos"
-    },
-    {
+        price: 50,
+        description: "Massa leve com recheio cremoso. Uma sobremesa prática e sempre deliciosa.",
+        category: "Sobremesas"
+     }, {
         _id: "13",
-        name: "Panetone Recheado",
+        name: "Brigadeiro",
         image: food_13,
-        price: 12,
-        description: "Uma versão ainda mais indulgente do tradicional, nosso panetone é recheado com cremes ou chocolates, trazendo um toque especial às celebrações de fim de ano.",
-        category: "Panetones"
+        price: 50,
+        description: "Tradicional, cremoso e feito com chocolate de verdade. Impossível comer um só.",
+        category: "Docinhos"
     },
     {
         _id: "14",
-        name: "Panetone Salgado",
-        image: food_14,
-        price: 18,
-        description: "Uma versão surpreendente do clássico natalino, nosso panetone salgado é recheado com queijos, perfeito para quem prefere um sabor mais salgado e sofisticado.",
-        category: "Panetones"
-    }, {
-        _id: "15",
-        name: "Pão de Calabresa",
-        image: food_15,
-        price: 16,
-        description: "Recheado com pedaços suculentos de calabresa, nosso pão de calabresa é macio por dentro e crocante por fora, ideal para um lanche ou acompanhamento.",
-        category: "Assados"
-    }, {
-        _id: "16",
-        name: "Empadão",
-        image: food_16,
-        price: 24,
-        description: "Um prato tradicional e reconfortante, nosso empadão é feito com massa caseira e recheado com uma mistura cremosa de frango perfeito para qualquer refeição.",
-        category: "Assados"
-    }, {
-        _id: "17",
-        name: "Pavê de Pêssego",
-        image: food_17,
-        price: 14,
-        description: "Refrescante e leve, o pavê de pêssego combina camadas de biscoito, creme e pedaços suculentos de pêssego, criando uma sobremesa equilibrada e deliciosa.",
-        category: "Sobremesas"
-    }, {
-        _id: "18",
-        name: "Pavê de Morango",
-        image: food_18,
-        price: 12,
-        description: "Uma combinação irresistível de morangos frescos, creme suave e camadas de biscoito, nosso pavê de morango é uma sobremesa perfeita para qualquer ocasião.",
-        category: "Sobremesas"
-    }, {
-        _id: "19",
-        name: "Banoffe",
-        image: food_19,
-        price: 20,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Sobremesas"
-    }, {
-        _id: "20",
-        name: "Torta",
-        image: food_20,
-        price: 15,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Sobremesas"
-    }, {
-        _id: "21",
-        name: "Brigadeiro",
-        image: food_21,
-        price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Ovos"
-    }, {
-        _id: "22",
-        name: "Ninho com Nutella",
-        image: food_22,
-        price: 22,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Ovos"
-    }, {
-        _id: "23",
-        name: "Chocolate Branco",
-        image: food_23,
-        price: 10,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Ovos"
-    }, {
-        _id: "24",
-        name: "Brigadeiro",
-        image: food_24,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Docinhos"
-    },
-    {
-        _id: "25",
         name: "Beijinho",
-        image: food_25,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
+        image: food_14,
+        price: 50,
+        description: "Docinho macio com sabor marcante de coco. Um clássico das festinhas.",
         category: "Docinhos"
-    },
-    {
-        _id: "26",
-        name: "Tomato Pasta",
-        image: food_26,
-        price: 18,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
-    }, {
-        _id: "27",
-        name: "Creamy Pasta",
-        image: food_27,
-        price: 16,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
-    }, {
-        _id: "28",
-        name: "Chicken Pasta",
-        image: food_28,
-        price: 24,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
-    }, {
-        _id: "29",
-        name: "Buttter Noodles",
-        image: food_29,
-        price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
-    }, {
-        _id: "30",
-        name: "Veg Noodles",
-        image: food_30,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
-    }, {
-        _id: "31",
-        name: "Somen Noodles",
-        image: food_31,
-        price: 20,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
-    }, {
-        _id: "32",
-        name: "Cooked Noodles",
-        image: food_32,
-        price: 15,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
     }
 ]

@@ -1,17 +1,18 @@
 .explore-menu{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.2rem;
 }
 
 .explore-menu h1{
-    color: #252525;
+    font-size: 2.5rem;
+    color: var(--black-light);
     font-weight: 500;
 }
 
 .explore-menu-text{
     max-width: 60%;
-    color: #41403c;
+    color:var(--black-light);
 }
 
 .explore-menu-list{
@@ -43,8 +44,10 @@
 
 .explore-menu-list-item p{
     margin-top: 10px;
-    color: #84847f;
-    font-size: max(1.1vw,12px);
+    color: var(--black-light);
+    text-transform: uppercase;
+    font-size: max(0.8vw,12px);
+    font-weight: 600;
     cursor: pointer;
 }
 

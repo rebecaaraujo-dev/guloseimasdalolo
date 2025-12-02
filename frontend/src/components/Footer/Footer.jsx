@@ -10,7 +10,7 @@ const Footer = () => {
                     <img src={assets.logo_circle} alt="" className="footer-logo" />
                 </div>
                 <div className="footer-content-center">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, laborum! Vel esse optio sint numquam adipisci atque corrupti eos aliquid alias illo similique, veniam iste ipsum eveniet voluptatibus. Molestiae, ullam?</p>
+                    <p>Mais do que confeitaria, somos afeto em forma de sabor.</p>
                     <div className="footer-social-icons">
                         <a href="https://wa.me/5521979859828"><img src={assets.whatsapp_icon} alt="Ícone WhatsApp"/></a>
                         <a href="https://www.instagram.com/lolo_daguloseimas/"><img src={assets.instagram_icon} alt="Ícone Instagram"/></a>

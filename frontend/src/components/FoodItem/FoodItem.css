@@ -20,13 +20,14 @@
 }
 
 .food-item-info{
-    padding: 20px;
+    padding: 1rem 1.2rem;
 }
 
 .food-item-name p{
     margin-bottom: 10px;
     font-size: 20px;
     font-weight: 500;
+    color: var(--black);
 }
 
 .food-item-description{
@@ -40,7 +41,7 @@
     justify-content: end;
     align-items: baseline;
     gap: .5em;
-    margin-top: 3em;
+    margin-top: 1em;
 }
 
 .food-item-price-text{

@@ -11,9 +11,9 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 1.5vw;
+    gap: 1.5rem;
     max-width: 45%;
-    bottom: 10%;
+    bottom: 15%;
     left: 6vw;
     animation: fadeIn 3s;
 }
@@ -22,6 +22,7 @@
     font-weight: 500;
     color: #ffffff;
     font-size: max(4vw,20px);
+    line-height: 3.5rem;
 }
 
 .header-contents p{
@@ -38,6 +39,14 @@
     padding: 1vw 2.3vw;
     background-color: white;
     border-radius: 50px;
+}
+
+.header-contents button:hover{
+    cursor: pointer;
+    background-color: var(--green-transparent);
+    color: black;
+    transition: 0.3s;
+    transform: scale(1.1);
 }
 
 @media (max-width:1050px){
