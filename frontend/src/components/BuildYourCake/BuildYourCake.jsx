@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../Popup/Popup.css';
 import './BuildYourCake.css';
 import { StoreContext } from '../../context/StoreContext';
 
@@ -43,50 +44,50 @@ const BuildYourCake = ({ isOpen, onClose, cakeName }) => {
       case 1:
         return (
           <div className='select-cake-base'>
-            <div className='content'>
+            <div className='cake-content'>
               <h1 className='title'>Monte seu <span className='cake-name-emphasis'>{displayName}</span></h1>
               <p className='subtitle'>Escolha entre Massa Simples ou Massa Especial</p>
-              <div className='options'>
-                <div className='options-column'>
-                  <h2 className='section-title'>Massas simples:</h2>
+              <div className='cake-options'>
+                <div className='cake-options-column'>
+                  <h2 className='cake-section-title'>Massas simples:</h2>
                   <ul>
                     <li
-                      className={`option ${selection.base === 'Baunilha' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.base === 'Baunilha' ? 'selected' : ''}`}
                       onClick={() => handleSelection('base', 'Baunilha')}
                     >
                       Baunilha
                     </li>
                     <li
-                      className={`option ${selection.base === 'Chocolate' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.base === 'Chocolate' ? 'selected' : ''}`}
                       onClick={() => handleSelection('base', 'Chocolate')}
                     >
                       Chocolate
                     </li>
                     <li
-                      className={`option ${selection.base === 'Natural' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.base === 'Natural' ? 'selected' : ''}`}
                       onClick={() => handleSelection('base', 'Natural')}
                     >
                       Natural
                     </li>
                   </ul>
                 </div>
-                <div className='options-column'>
-                  <h2 className='section-title'>Massas especiais:</h2>
+                <div className='cake-options-column'>
+                  <h2 className='cake-section-title'>Massas especiais:</h2>
                   <ul>
                     <li
-                      className={`option ${selection.base === 'Red Velvet' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.base === 'Red Velvet' ? 'selected' : ''}`}
                       onClick={() => handleSelection('base', 'Red Velvet')}
                     >
                       Red Velvet
                     </li>
                     <li
-                      className={`option ${selection.base === 'Formigueiro' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.base === 'Formigueiro' ? 'selected' : ''}`}
                       onClick={() => handleSelection('base', 'Formigueiro')}
                     >
                       Formigueiro
                     </li>
                     <li
-                      className={`option ${selection.base === 'Cenoura' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.base === 'Cenoura' ? 'selected' : ''}`}
                       onClick={() => handleSelection('base', 'Cenoura')}
                     >
                       Cenoura
@@ -94,154 +95,154 @@ const BuildYourCake = ({ isOpen, onClose, cakeName }) => {
                   </ul>
                 </div>
               </div>
-              <div className='bottom'>
-                {step > 1 && <button className='prev' onClick={handlePrev}>Voltar</button>}
-                <button className='next' onClick={handleNext}>Próximo</button>
+              <div className='cake-bottom'>
+                {step > 1 && <button className='cake-prev' onClick={handlePrev}>Voltar</button>}
+                <button className='cake-next' onClick={handleNext}>Próximo</button>
               </div>
             </div>
           </div>
         );
       case 2:
         return (
-          <div className='select-filling'>
-            <div className='content'>
+          <div className='cake-select-filling'>
+            <div className='cake-content'>
               <h1 className='title'>Agora escolha o recheio</h1>
               <p className='subtitle'>Escolha entre Recheio Simples, Especial, Mousse ou Compotas</p>
-              <div className='options-filling'>
-                <div className='options-column'>
-                  <h2 className='section-title'>Simples:</h2>
+              <div className='cake-options-filling'>
+                <div className='cake-options-column'>
+                  <h2 className='cake-section-title'>Simples:</h2>
                   <ul>
                     <li
-                      className={`option ${selection.filling === 'Chocolate' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Chocolate' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Chocolate')}
                     >
                       Chocolate
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Morango' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Morango' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Morango')}
                     >
                       Morango
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Brigadeiro Branco' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Brigadeiro Branco' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Brigadeiro Branco')}
                     >
                       Brigadeiro Branco
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Limão' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Limão' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Limão')}
                     >
                       Limão
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Maracujá' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Maracujá' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Maracujá')}
                     >
                       Maracujá
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Beijinho' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Beijinho' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Beijinho')}
                     >
                       Beijinho
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Creme Belga' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Creme Belga' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Creme Belga')}
                     >
                       Creme Belga
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Creme Belga de Côco' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Creme Belga de Côco' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Creme Belga de Côco')}
                     >
                       Creme Belga de Côco
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Ninho' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Ninho' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Ninho')}
                     >
                       Ninho
                     </li>
                   </ul>
                 </div>
-                <div className='options-column'>
-                  <h2 className='section-title'>Especiais:</h2>
+                <div className='cake-options-column'>
+                  <h2 className='cake-section-title'>Especiais:</h2>
                   <ul>
                     <li
-                      className={`option ${selection.filling === 'Chocolate Branco' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Chocolate Branco' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Chocolate Branco')}
                     >
                       Chocolate Branco
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Paçoca' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Paçoca' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Paçoca')}
                     >
                       Paçoca
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Brigadeiro de Cream Cheese' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Brigadeiro de Cream Cheese' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Brigadeiro de Cream Cheese')}
                     >
                       Brigadeiro de Cream Cheese
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Oreo' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Oreo' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Oreo')}
                     >
                       Oreo
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Doce de Leite' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Doce de Leite' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Doce de Leite')}
                     >
                       Doce de Leite
                     </li>
                   </ul>
                 </div>
-                <div className='options-column'>
-                  <h2 className='section-title'>Mousses:</h2>
+                <div className='cake-options-column'>
+                  <h2 className='cake-section-title'>Mousses:</h2>
                   <ul>
                     <li
-                      className={`option ${selection.filling === 'Mousse Morango' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Mousse Morango' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Mousse Morango')}
                     >
                       Morango
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Mousse Limão' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Mousse Limão' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Mousse Limão')}
                     >
                       Limão
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Mousse Maracujá' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Mousse Maracujá' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Mousse Maracujá')}
                     >
                       Brigadeiro de Cream Cheese
                     </li>
                   </ul>
                 </div>
-                <div className='options-column'>
-                  <h2 className='section-title'>Compotas:</h2>
+                <div className='cake-options-column'>
+                  <h2 className='cake-section-title'>Compotas:</h2>
                   <ul>
                     <li
-                      className={`option ${selection.filling === 'Compota de Morango' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Compota de Morango' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Compota de Morango')}
                     >
                       Morango
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Compota de Abacaxi' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Compota de Abacaxi' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Compota de Abacaxi')}
                     >
                       Abacaxi
                     </li>
                     <li
-                      className={`option ${selection.filling === 'Compota de Banana' ? 'selected' : ''}`}
+                      className={`cake-option ${selection.filling === 'Compota de Banana' ? 'selected' : ''}`}
                       onClick={() => handleSelection('filling', 'Compota de Banana')}
                     >
                       Banana
@@ -250,25 +251,25 @@ const BuildYourCake = ({ isOpen, onClose, cakeName }) => {
                 </div>
               </div>
             </div>
-            <div className='bottom'>
-              <button className='prev' onClick={handlePrev}>Voltar</button>
-              <button className='next' onClick={handleNext}>Próximo</button>
+            <div className='cake-bottom'>
+              <button className='cake-prev' onClick={handlePrev}>Voltar</button>
+              <button className='cake-next' onClick={handleNext}>Próximo</button>
             </div>
           </div>
         );
       case 3:
         return (
-          <div className='order-summary'>
-            <div className='content'>
-              <h1 className='section-title'>Resumo do Pedido</h1>
+          <div className='cake-order-summary'>
+            <div className='cake-content'>
+              <h1 className='cake-section-title'>Resumo do Pedido</h1>
               <p>Seu <strong><span className='cake-name-emphasis'>{displayName}</span></strong> personalizado:</p>
               <p><strong>Massa:</strong> {selection.base}</p>
               <p><strong>Recheio:</strong> {selection.filling}</p>
             </div>
-            <div className='bottom'>
-              <button className='prev' onClick={handlePrev}>Voltar</button>
+            <div className='cake-bottom'>
+              <button className='cake-prev' onClick={handlePrev}>Voltar</button>
               <button
-                className='next'
+                className='cake-next'
                 onClick={() => {
                   addCustomCakeToCart({
                     name: displayName,
@@ -289,8 +290,8 @@ const BuildYourCake = ({ isOpen, onClose, cakeName }) => {
   if (!isOpen) return null;
 
   return (
-    <div className='popup-overlay'>
-      <div className='popup-content'>
+    <div className='cake-popup-overlay'>
+      <div className='cake-popup-content'>
         <button className='close-button' onClick={onClose}>X</button>
         {renderStep()}
       </div>

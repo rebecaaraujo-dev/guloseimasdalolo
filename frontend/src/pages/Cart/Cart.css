@@ -1,5 +1,23 @@
 @import '../../index.css';
 
+.cart-empty-message {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--gray-dark);
+}
+
+.cart-cake-details {
+    font-size: 0.9em;
+    color: var(--gray-dark);
+}
+
+.cart-total {
+    text-align: right;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
 .cart{
     margin-top: 100px;
 }

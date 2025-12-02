@@ -34,8 +34,8 @@ const Cart = () => {
                 <br />
                 <hr />
                 {cartEntries.length === 0 && customCakes.length === 0 ? (
-                    <div style={{ textAlign: 'center', margin: '2rem 0', color: 'var(--gray-dark)' }}>
-                        Seu carrinho está vazio.
+                        <div className="cart-empty-message">
+                            Seu carrinho está vazio.
                     </div>
                 ) : (
                     <>
@@ -56,7 +56,7 @@ const Cart = () => {
                                 <div className="cart-items-title cart-items-item">
                                     <div>
                                         <strong>{cake.name}</strong>
-                                        <div style={{ fontSize: '0.9em', color: 'var(--gray-dark)' }}>
+                                        <div className="cart-cake-details">
                                             {cake.name === 'Pavê' && cake.type ? (
                                                 <div>Sabor: {cake.type.charAt(0).toUpperCase() + cake.type.slice(1)}</div>
                                             ) : (
@@ -78,7 +78,7 @@ const Cart = () => {
                     </>
                 )}
                 {(cartEntries.length > 0 || customCakes.length > 0) && (
-                    <div className="cart-total" style={{ textAlign: 'right', fontWeight: 600, fontSize: '1.2rem', marginTop: '2rem' }}>
+                    <div className="cart-total">
                         Total do carrinho: R${(cartTotal + customCakesTotal).toFixed(2)}
                     </div>
                 )}

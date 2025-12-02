@@ -12,7 +12,7 @@ export const NavBar = ({ setShowLogin }) => {
             <Link to='/'><img src={assets.logo} alt="" className="logo" /></Link>
             <ul className="navbar-menu">
                 <Link to='/' onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>home</Link>
-                <Link to='/#explore-menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>menu</Link>
+                <a href="#explore-menu" onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>menu</a>
                 <a href='https://www.ifood.com.br/' target="_blank" onClick={() => setMenu("ifood")} className={menu === "ifood" ? "active" : ""}>ifood</a>
                 <Link to='/About' onClick={() => setMenu("contato")} className={menu === "contato" ? "active" : ""}>contato</Link>
             </ul>

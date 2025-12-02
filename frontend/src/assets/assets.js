@@ -171,7 +171,7 @@ export const food_list = [
         name: "Pavê",
         image: food_10,
         price: 50,
-        description: "Camadas cremosas com biscoito e recheio no sabor da sua escolha — tradicional, pêssego ou morango. Leve, geladinho e sempre irresistível.",
+        description: "Camadas cremosas com biscoito e recheio nos sabores tradicional, pêssego ou morango.",
         category: "Sobremesas"
     }, {
         _id: "11",

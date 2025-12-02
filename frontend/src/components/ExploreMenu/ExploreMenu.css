@@ -40,6 +40,7 @@
 
 .explore-menu-list-item img:hover{
     transform: scale(1.05);
+    box-shadow: 0 0 15px rgb(197, 255, 37);
 }
 
 .explore-menu-list-item p{

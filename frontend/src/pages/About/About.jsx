@@ -1,8 +1,8 @@
 import './About.css';
 import React from 'react';
-import whatsappIcon from '../../assets/whatsapp-icon.svg';
-import instagramIcon from '../../assets/instagram-icon.svg';
-import locationIcon from '../../assets/location-icon.svg';
+import whatsappIcon from '../../assets/whatsapp_icon_dark.png';
+import instagramIcon from '../../assets/instagram_icon_dark.png';
+import locationIcon from '../../assets/location_icon_dark.png';
 import ownerPicture from '../../assets/owner.png';
 
 const About = () => {
@@ -10,20 +10,26 @@ const About = () => {
         <div className="about-page app">
             <div className="about-section">
                 <div className="about-content">
-                    <h2>Sobre a Guloseimas da Lolô</h2>
-                    <p>
-                        A Guloseimas da Lolô nasceu do amor de família, da doçura de quem acredita que cada bolo deve carregar afeto, história e sabor. O nome “Lolô” vem da filhinha da chefe confeiteira, um pedacinho de doçura que virou inspiração para cada receita. É com esse cuidado e esse significado especial que dedicamos tempo e carinho em cada massa, em cada recheio, em cada detalhe.<br />
-                        <br />
-                        Para nós, fazer doces não é só questão de confeitaria — é expressão de amor, laços familiares e cuidado com quem vai receber nosso bolo. Mais do que entregar um doce, queremos entregar um pedacinho de aconchego, lembranças gostosas e celebrações cheias de sentimento.<br />
-                        <br />
-                        Nossa missão é adoçar momentos especiais e dar vida a sonhos em forma de massas fofinhas e recheios caprichados, sempre com ingredientes selecionados e o toque caseiro que conquista corações.💕
-                    </p>
-                    <img src={ownerPicture} alt="Confeiteira Caroline" />
+                    <div className='about-content-text'>
+                        <h2>Sobre a
+                            <br /><strong>Guloseimas da Lolô</strong></h2>
+                        <p>
+                            A Guloseimas da Lolô nasceu de um sonho simples e cheio de amor: transformar momentos especiais em sabores que abraçam. O nome veio da minha pequena, a Eloá, a nossa “Lolô”, que trouxe ainda mais doçura para a minha vida e acabou virando inspiração para cada receita que faço.
+                            <br /> <br />
+                            Aqui, cada bolo tem um propósito. Não é só sobre confeitar — é sobre colocar carinho em cada massa, capricho em cada recheio e muito cuidado em cada detalhe. Gosto de pensar que, quando alguém leva um doce meu pra casa, está levando também um pedacinho da nossa história e do meu amor pela confeitaria.
+                            <br /> <br />
+                            Meu objetivo é simples: adoçar momentos, criar memórias e fazer parte das celebrações das pessoas com aquele toque caseiro que lembra aconchego, família e abraço apertado. Tudo sempre feito com ingredientes de qualidade e com o mesmo cuidado que eu teria preparando para quem mais amo. 💕
+                        </p>
+                    </div>
+                    <div className="about-content-img">
+                        <img src={ownerPicture} alt="Confeiteira Caroline" />
+
+                    </div>
                 </div>
             </div>
             <div className="contato-section" id="contato">
                 <div className="contato-content">
-                    <h2>Contato</h2>
+                    <h2>Entre em Contato</h2>
                     <div className="info-cards">
                         <a href="https://wa.me/5521979859828" target="_blank" rel="noopener noreferrer" className="info-card">
                             <img src={whatsappIcon} alt="WhatsApp icon" />

@@ -1,26 +1,55 @@
 @import "../../index.css";
-.select-cake-base{
+
+.cake-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.cake-popup-content {
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 40px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.select-cake-base {
   width: 100%;
 }
 
-.content{
+.cake-content {
+  padding: .5rem 1rem;
   animation: fadeIn 3s;
 }
 
-.options,.options-filling{
+.cake-options,
+.cake-options-filling {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
   padding: 1vw;
   gap: 2rem;
 }
 
-.options-filling{
+.cake-options-filling {
   justify-content: space-around;
   gap: 1vw;
 }
 
-.options-column{
+.cake-options-column {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,61 +59,51 @@
   width: 30%;
 }
 
-.options-column:nth-child(1){
+.cake-options-column:nth-child(1) {
   background-color: var(--pink-transparent);
 }
 
-.options-column:nth-child(3){
+.cake-options-column:nth-child(3) {
   background-color: var(--blue-transparent);
 }
 
-.options-column:nth-child(2){
+.cake-options-column:nth-child(2) {
   background-color: var(--green-transparent);
 }
 
-.options-column:nth-child(4){
+.cake-options-column:nth-child(4) {
   background-color: var(--yellow-transparent);
 }
 
-.options-column:hover{
+.cake-options-column:hover {
   transform: scale(1.05);
 }
 
-.options-column.selected{
+.cake-options-column.selected {
   transform: scale(1.05);
 }
 
-.bottom{
+.cake-bottom {
   display: flex;
   justify-content: right;
   margin-top: .5vw;
 }
 
-.title,.subtitle{
+.cake-title,
+.cake-subtitle {
   font-size: 2em;
   font-weight: 600;
   color: var(--pink);
   margin-left: 2vw;
 }
 
-.title{
-  font-size: 2em;
-  font-weight: 600;
-  color: var(--pink);
-}
-
-.subtitle{
-  font-size: 1em;
-  color: var(--black-light);
-}
-
-.section-title{
+.cake-section-title {
   color: var(--black-light);
   font-size: 1.5rem;
-  margin-left: .5em;
+  margin-left: .35em;
 }
 
-.option{
+.cake-option {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -104,22 +123,24 @@
   text-align: center;
 }
 
-.option:hover {
+.cake-option:hover {
   transition-duration: 0.3s;
   transform: scale(1.05);
 }
 
-.option.selected{
+.cake-option.selected {
   background-color: var(--black);
   border: 1px solid var(--black);
   color: white;
   font-weight: 500;
 }
-.next,.prev{
+
+.cake-next,
+.cake-prev {
   border: none;
   color: white;
   font-weight: 500;
-  font-size: max(1vw, 13px) ;
+  font-size: max(1vw, 13px);
   padding: .5vw 1.5vw;
   background-color: var(--black);
   border-radius: 50px;
@@ -128,41 +149,41 @@
   margin: 8px;
 }
 
-.prev{
+.cake-prev {
   background-color: var(--gray);
 }
 
-.next:hover{
+.cake-next:hover {
   background-color: var(--green);
   color: var(--black);
 }
 
-.prev:hover{
+.cake-prev:hover {
   background-color: var(--gray-dark);
 }
 
-.order-summary {
+.cake-order-summary {
   padding: 20px;
   border-radius: 1rem;
   margin: 1rem 0;
   animation: fadeIn 3s;
 }
 
-.order-summary .section-title {
+.cake-order-summary .section-title {
   font-size: 2rem;
   font-weight: 600;
   color: var(--black);
   margin-bottom: 1rem;
 }
 
-.order-summary p {
+.cake-order-summary p {
   font-size: 1.2rem;
   color: var(--black-light);
   margin: 0.5rem 1rem;
   text-align: left;
 }
 
-.order-summary p strong {
+.cake-order-summary p strong {
   color: var(--green-dark);
 }
 
@@ -171,14 +192,14 @@
   font-weight: 600;
 }
 
-.order-summary .bottom {
+.cake-order-summary .bottom {
   display: flex;
   justify-content: space-between;
   margin-top: 1.5rem;
 }
 
-.order-summary .prev,
-.order-summary .next {
+.cake-order-summary .prev,
+.cake-order-summary .next {
   border: none;
   color: white;
   font-weight: 500;
@@ -191,66 +212,17 @@
   margin: 8px;
 }
 
-.order-summary .prev {
+.cake-order-summary .prev {
   color: var(--black);
   background-color: var(--gray-light);
 }
 
-.order-summary .next:hover {
+.cake-order-summary .next:hover {
   background-color: var(--green);
   color: var(--black);
 }
 
-.order-summary .prev:hover {
+.cake-order-summary .prev:hover {
   background-color: var(--black-light);
   color: white;
-}
-
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.popup-content {
-  position: relative;
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  padding-top: 40px;
-  width: 90%;
-  max-width: 900px;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background-color: white;
-  border: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  color: rgb(0, 0, 0);
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-
-.close-button:hover {
-  transform: scale(1.2);
 }
