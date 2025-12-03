@@ -5,30 +5,33 @@ import { StoreContext } from '../../context/StoreContext'
 
 const Cart = () => {
 
-    const { cartItems, food_list, removeFromCart, customCakes, setCustomCakes } = useContext(StoreContext);
+    const { cartItems, food_list, removeFromCart, customCakes, setCustomCakes, cartItemsMetadata } = useContext(StoreContext);
 
     const cartEntries = food_list.filter(item => cartItems[item._id] > 0);
     const cartTotal = cartEntries.reduce((acc, item) => acc + item.price * cartItems[item._id], 0);
 
     const sendToWhatsApp = () => {
-        let message = "Olá! Gostaria de fazer um pedido:\n\n";
+        let message = "Olá! Gostaria de fazer um pedido:\n";
 
         cartEntries.forEach((item) => {
             const quantity = cartItems[item._id];
             const itemTotal = (item.price * quantity).toFixed(2);
-            message += `*${item.name.toUpperCase()}* \n• Qtd: ${quantity} \n• Valor unitário: R$${itemTotal}\n\n`;
+            const itemNotes = cartItemsMetadata[item._id]?.notes || '';
+            message += `\n*${item.name.toUpperCase()}* \n• Qtd: ${quantity} \n• Valor unitário: R$${itemTotal} `;
+            if (itemNotes) message += `\n• Obs: ${itemNotes}`;
+            message += `\n`;
         });
 
         if (customCakes.length > 0) {
             customCakes.forEach((cake, idx) => {
-                message += `*${cake.name.toUpperCase()}*`;
+                message += `\n*${cake.name.toUpperCase()}*`;
                 if (cake.name === 'Pavê' && cake.type) {
                     message += ` - Sabor: ${cake.type}`;
                 } else {
                     if (cake.base) message += `\n• Massa: ${cake.base}`;
                     if (cake.filling) message += `\n• Recheio: ${cake.filling}`;
                 }
-                if (cake.notes) message += ` - Obs: ${cake.notes}`;
+                if (cake.notes) message += `\n• Obs: ${cake.notes}`;
                 message += `\n• Valor unitário: R$${customCakePrice.toFixed(2)}\n`;
             });
         }
@@ -71,7 +74,10 @@ const Cart = () => {
                         {cartEntries.map((item) => (
                             <div key={item._id}>
                                 <div className="cart-items-title cart-items-item">
-                                    <p><strong>{item.name}</strong></p>
+                                    <p>
+                                        <strong>{item.name}</strong>
+                                        {cartItemsMetadata[item._id]?.notes && <div className="cart-item-notes">Observações: {cartItemsMetadata[item._id]?.notes}</div>}
+                                    </p>
                                     <p>R${item.price.toFixed(2)}</p>
                                     <p>{cartItems[item._id]}</p>
                                     <p>R${(item.price * cartItems[item._id]).toFixed(2)}</p>

@@ -7,14 +7,18 @@ const StoreContextProvider = (props) =>{
 
 
     const [cartItems,setCartItems] = useState({});
+    const [cartItemsMetadata, setCartItemsMetadata] = useState({});
     const [customCakes, setCustomCakes] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
 
-    const addToCart = (itemId) => {
+    const addToCart = (itemId, metadata = {}) => {
         if (!cartItems[itemId]) {
             setCartItems((prev)=>({...prev,[itemId]:1}))
         }else{
             setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
+        }
+        if (metadata && Object.keys(metadata).length > 0) {
+            setCartItemsMetadata((prev)=>({...prev,[itemId]:metadata}))
         }
     }
 
@@ -36,6 +40,8 @@ const StoreContextProvider = (props) =>{
         setCartItems,
         addToCart,
         removeFromCart,
+        cartItemsMetadata,
+        setCartItemsMetadata,
         customCakes,
         setCustomCakes,
         addCustomCakeToCart,
