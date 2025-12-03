@@ -15,6 +15,7 @@ const BuildYourCake = ({ isOpen, onClose, cakeName }) => {
     compotas: null,
   });
   const [errorMessage, setErrorMessage] = useState('');
+  const [notes, setNotes] = useState('');
 
   const handleSelection = (type, value) => {
     setSelection((prev) => ({ ...prev, [type]: value }));
@@ -268,45 +269,57 @@ const BuildYourCake = ({ isOpen, onClose, cakeName }) => {
           </div>
         );
       case 3:
-        return (
-          <div className='cake-order-summary'>
-            <div className='cake-content'>
-              <h1 className='cake-section-title'>Resumo do Pedido</h1>
-              <p>Seu <strong><span className='cake-name-emphasis'>{displayName}</span></strong> personalizado:</p>
-              <p><strong>Massa:</strong> {selection.base}</p>
-              <p><strong>Recheio:</strong> {selection.filling}</p>
-            </div>
-            <div className='cake-bottom'>
-              <button className='cake-prev' onClick={handlePrev}>Voltar</button>
-              <button
-                className='cake-next'
-                onClick={() => {
-                  addCustomCakeToCart({
-                    name: displayName,
-                    ...selection
-                  });
-                  navigate('/cart');
-                  if (onClose) onClose();
-                }}
-              >Adicionar ao Carrinho</button>
-            </div>
-          </div>
-        );
+return (
+  <div className='cake-order-summary'>
+    <div className='cake-summary-container'>
+      <div className='cake-content'>
+        <h1 className='cake-section-title'>Resumo do Pedido</h1>
+        <p>Seu <strong><span className='cake-name-emphasis'>{displayName}</span></strong> personalizado:</p>
+        <p><strong>Massa:</strong> {selection.base}</p>
+        <p><strong>Recheio:</strong> {selection.filling}</p>
+      </div>
+    </div>
+    <div className='cake-observations-section'>
+      <h2 className='cake-section-title'>Observações</h2>
+      <textarea
+        value={notes}
+        onChange={e => setNotes(e.target.value)}
+        placeholder="Alguma observação especial?"
+        className="notes-textarea"
+      />
+    </div>
+    <div className='cake-bottom'>
+      <button className='cake-prev' onClick={handlePrev}>Voltar</button>
+      <button
+        className='cake-next'
+        onClick={() => {
+          addCustomCakeToCart({
+            name: displayName,
+            ...selection,
+            notes: notes
+          });
+          navigate('/cart');
+          if (onClose) onClose();
+        }}
+      >Adicionar ao Carrinho</button>
+    </div>
+  </div>
+);
       default:
-        return null;
+return null;
     }
   };
 
-  if (!isOpen) return null;
+if (!isOpen) return null;
 
-  return (
-    <div className='cake-popup-overlay'>
-      <div className='cake-popup-content'>
-        <button className='close-button' onClick={onClose}>X</button>
-        {renderStep()}
-      </div>
+return (
+  <div className='cake-popup-overlay'>
+    <div className='cake-popup-content'>
+      <button className='close-button' onClick={onClose}>X</button>
+      {renderStep()}
     </div>
-  );
+  </div>
+);
 };
 
 export default BuildYourCake;

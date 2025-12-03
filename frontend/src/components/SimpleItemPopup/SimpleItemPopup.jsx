@@ -25,7 +25,7 @@ const SimpleItemPopup = ({ isOpen, onClose, item, toppings = [], showNotes = tru
       onClose();
       setTimeout(() => {
         navigate('/cart');
-      }, 100); // Delay navigation to ensure popup closes first
+      }, 100);
     } else {
       navigate('/cart');
     }

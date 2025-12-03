@@ -7,17 +7,46 @@ const Cart = () => {
 
     const { cartItems, food_list, removeFromCart, customCakes, setCustomCakes } = useContext(StoreContext);
 
-    // Calculate total
     const cartEntries = food_list.filter(item => cartItems[item._id] > 0);
     const cartTotal = cartEntries.reduce((acc, item) => acc + item.price * cartItems[item._id], 0);
 
+    const sendToWhatsApp = () => {
+        let message = "Olá! Gostaria de fazer um pedido:\n\n";
 
-    // Remove custom cake by index
+        cartEntries.forEach((item) => {
+            const quantity = cartItems[item._id];
+            const itemTotal = (item.price * quantity).toFixed(2);
+            message += `*${item.name.toUpperCase()}* \n• Qtd: ${quantity} \n• Valor unitário: R$${itemTotal}\n\n`;
+        });
+
+        if (customCakes.length > 0) {
+            customCakes.forEach((cake, idx) => {
+                message += `*${cake.name.toUpperCase()}*`;
+                if (cake.name === 'Pavê' && cake.type) {
+                    message += ` - Sabor: ${cake.type}`;
+                } else {
+                    if (cake.base) message += `\n• Massa: ${cake.base}`;
+                    if (cake.filling) message += `\n• Recheio: ${cake.filling}`;
+                }
+                if (cake.notes) message += ` - Obs: ${cake.notes}`;
+                message += `\n• Valor unitário: R$${customCakePrice.toFixed(2)}\n`;
+            });
+        }
+
+        const finalTotal = (cartTotal + (customCakes.length * 100)).toFixed(2);
+        message += `\n*Total Estimado: R$${finalTotal}*\n`;
+        message += "\nPor favor, confirme o valor final e o prazo de entrega. Obrigado!";
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappNumber = "5521969980595";
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
+    };
+
+
     const removeCustomCake = (idx) => {
         setCustomCakes(prev => prev.filter((_, i) => i !== idx));
     };
 
-    // Calculate total for custom cakes (set a price, e.g., 100)
     const customCakePrice = 100;
     const customCakesTotal = (customCakes.length * customCakePrice);
 
@@ -34,8 +63,8 @@ const Cart = () => {
                 <br />
                 <hr />
                 {cartEntries.length === 0 && customCakes.length === 0 ? (
-                        <div className="cart-empty-message">
-                            Seu carrinho está vazio.
+                    <div className="cart-empty-message">
+                        Seu carrinho está vazio.
                     </div>
                 ) : (
                     <>
@@ -54,7 +83,7 @@ const Cart = () => {
                         {customCakes.map((cake, idx) => (
                             <div key={"custom-" + idx}>
                                 <div className="cart-items-title cart-items-item">
-                                    <div>
+                                    <p>
                                         <strong>{cake.name}</strong>
                                         <div className="cart-cake-details">
                                             {cake.name === 'Pavê' && cake.type ? (
@@ -65,8 +94,9 @@ const Cart = () => {
                                                     {cake.filling && <div>Recheio: {cake.filling}</div>}
                                                 </>
                                             )}
+                                            {cake.notes && <div className="cart-cake-notes">Observações: {cake.notes}</div>}
                                         </div>
-                                    </div>
+                                    </p>
                                     <p>R${customCakePrice.toFixed(2)}</p>
                                     <p>1</p>
                                     <p>R${customCakePrice.toFixed(2)}</p>
@@ -78,9 +108,17 @@ const Cart = () => {
                     </>
                 )}
                 {(cartEntries.length > 0 || customCakes.length > 0) && (
-                    <div className="cart-total">
-                        Total do carrinho: R${(cartTotal + customCakesTotal).toFixed(2)}
-                    </div>
+                    <>
+                        <div className="cart-bottom">
+                            <div className="cart-total">
+                                Total do carrinho: R${(cartTotal + customCakesTotal).toFixed(2)}
+                            </div>
+                            <button className="cart-whatsapp-btn" onClick={sendToWhatsApp}>
+                                Enviar Pedido pelo WhatsApp
+                            </button>
+
+                        </div>
+                    </>
                 )}
             </div>
         </div>

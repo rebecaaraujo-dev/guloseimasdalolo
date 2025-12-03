@@ -58,6 +58,7 @@
   margin-top: .5rem;
   border-radius: 1rem;
   min-width: 20%;
+  height: 85%;
 }
 
 .cake-section-options ul {
@@ -83,15 +84,17 @@
   width: 30%;
 }
 
-.cake-options-column:nth-child(1):hover{
-  background-color: var(--pink-light);
+.cake-options-column:nth-child(1):hover,
+.cake-options-column:nth-child(1):has(.cake-option.selected) {
+  background-color: var(--pink-light)!important;
 }
 
 .cake-options-column:nth-child(2) {
   background-color: var(--green-transparent);
 }
 
-.cake-options-column:nth-child(2):hover {
+.cake-options-column:nth-child(2):hover,
+.cake-options-column:nth-child(2):has(.cake-option.selected) {
   background-color: var(--green);
 }
 
@@ -99,11 +102,13 @@
   background-color: var(--blue-transparent);
 }
 
-.cake-options-column:nth-child(3):hover {
+.cake-options-column:nth-child(3):hover,
+.cake-options-column:nth-child(3):has(.cake-option.selected) {
   background-color: var(--blue);
 }
 
-.cake-options-column:nth-child(4) {
+.cake-options-column:nth-child(4),
+.cake-options-column:nth-child(4):has(.cake-option.selected) {
   background-color: var(--yellow-transparent);
 }
 
@@ -253,4 +258,27 @@
 .cake-order-summary .prev:hover {
   background-color: var(--black-light);
   color: white;
+}
+
+.cake-summary-container {
+  margin-bottom: 2rem;
+}
+
+.cake-content {
+  padding: 0;
+}
+
+.cake-observations-section {
+  margin-top: 2rem;
+}
+
+.cake-observations-section .notes-textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
 }

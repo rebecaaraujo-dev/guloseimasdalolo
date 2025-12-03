@@ -37,6 +37,7 @@ const StoreContextProvider = (props) =>{
         addToCart,
         removeFromCart,
         customCakes,
+        setCustomCakes,
         addCustomCakeToCart,
         searchTerm,
         setSearchTerm
