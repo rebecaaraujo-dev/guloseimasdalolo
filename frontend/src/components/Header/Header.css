@@ -50,18 +50,43 @@
 }
 
 @media (max-width:1050px){
+    .header{
+        height: 60vw;
+    }
+
     .header-contents{
-        max-width: 45%;
+        max-width: 80%;
+    }
+
+    .header-contents h2 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    .header-contents p{
+        font-size: 1rem;
     }
 }
 
 @media (max-width:750px){
+    .header{
+        height: 70vw;
+        padding-top: 3rem;
+    }
+
+    .header h2 {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
     .header-contents{
-        max-width: 65%;
+        gap: 1rem;
+        max-width: 85%;
     }
 
     .header-contents p{
-        display: none;
+        font-size: 0.9rem;
+        max-width: 100%;
     }
 
     .header-contents button{

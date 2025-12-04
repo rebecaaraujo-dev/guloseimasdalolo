@@ -19,7 +19,7 @@
   --gray-light2:#ebebeb;
   --gray: #a5a5a5;
   --gray-dark: #70676b;
-  --black: #252525;
+  --black: #333333;
   --black-light: #41403c;
   --black-transparent: #41403c71;
 }
@@ -44,8 +44,57 @@ a{
 }
 
 .app{
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive base helpers */
+.container{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+img, picture, svg, video{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button{
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input, button, select, textarea{
+  font-family: inherit;
+}
+
+/* Make clickable controls easier to tap on small screens */
+button, .search-clear-btn, .search-icon-btn {
+  min-height: 36px;
+  min-width: 36px;
+}
+
+/* Small-screen typography scaling */
+html{font-size:16px}
+
+@media (max-width:900px){
+  html{font-size:15px}
+}
+
+@media (max-width:600px){
+  html{font-size:14px}
+  .app, .container{padding: 0 0.75rem}
+}
+
+/* Header background behaves better on small screens */
+.header{
+  background-position: center;
+  background-size: cover;
 }
 
 @keyframes fadeIn{

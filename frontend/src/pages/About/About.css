@@ -42,8 +42,8 @@
     width: 85%;
 }
 
-.about-content-img img{
-    width: 400px;
+.about-content-img img {
+    width: 70rem;
     height: auto;
     border-radius: 10px;
     margin-top: 1rem;
@@ -52,11 +52,6 @@
 .contato-section {
     padding: 60px 0;
     margin-top: 50px;
-}
-
-.contato-content {
-    max-width: 1000px;
-    margin: 0;
 }
 
 .contato-content h2 {
@@ -93,15 +88,15 @@
 .info-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around !important;
     gap: 1.1rem;
-    margin-top: 20px;
+    margin-top: 2rem;
 }
 
 .info-card {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 1rem;
     text-decoration: none;
     background-color: var(--pink-transparent);
     padding: 1.5rem;
@@ -151,9 +146,40 @@
     .about-header-contents {
         padding: 0 20px;
     }
+
     .about-content,
     .contato-content {
         padding: 0 20px;
+        gap: 2.5rem;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-content-text p {
+        font-size: max(0.95vw, 15px);
+        width: 100%;
+    }
+
+    .about-content-img img {
+        width: 1800px;
+        height: auto;
+    }
+
+    .info-cards {
+        gap: 1rem;
+        justify-content: space-around;
+    }
+
+    .info-card {
+        width: calc(33.333% - 0.7rem);
+        padding: 1.2rem;
+    }
+
+    .info-card img {
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -162,26 +188,53 @@
         padding: 40px 20px;
         margin: 20px auto;
     }
+
     .about-header-contents h2 {
         font-size: 24px;
     }
+
     .about-header-contents p {
         font-size: 14px;
     }
+
     .about-section,
     .contato-section {
         padding: 40px 0 0 0;
         margin: 30px auto;
     }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .about-content h1,
     .contato-content h1 {
         font-size: 28px;
     }
+
+    .about-content-img img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        order: -1;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-content-text {
+        width: 100%;
+    }
+
+    .about-content-text p {
+        width: 100%;
+    }
+
     .about-content p,
     .info-text p {
         font-size: 14px;
     }
-    .mapa {
-        height: 300px;
+
+    .info-card {
+        width: 25rem;
     }
 }

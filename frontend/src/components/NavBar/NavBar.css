@@ -5,10 +5,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .navbar .logo {
     width: 130px;
+}
+
+.navbar-hamburger{
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .navbar-menu {
@@ -135,7 +143,48 @@
 }
 
 @media (max-width:750px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .navbar-hamburger {
+        display: block;
+        background: transparent;
+        border: none;
+        font-size: 1.6rem;
+        color: var(--pink-dark);
+        cursor: pointer;
+        position: absolute;
+        left: 20px;
+    }
+
+    .navbar .logo {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-right {
+        position: absolute;
+        right: 20px;
+    }
+
     .navbar-menu {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        gap: 12px;
+        padding: 1rem;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        z-index: 40;
+        width: 100%;
+    }
+
+    .navbar-menu.open {
+        display: flex;
     }
 }
