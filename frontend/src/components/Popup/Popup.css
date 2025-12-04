@@ -28,6 +28,9 @@
   width: 200px;
   border-radius: 10px;
   margin-bottom: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .close-button {
@@ -81,6 +84,9 @@ p{
 
   .popup-item-image {
     width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .title {
@@ -107,6 +113,9 @@ p{
   .popup-item-image {
     width: 120px;
     margin-bottom: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .close-button {

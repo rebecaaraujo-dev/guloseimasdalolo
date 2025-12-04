@@ -1,160 +1,90 @@
-.options-centered {
-  justify-content: center;
-  gap: 2rem;
-}
-
-.option-interactive {
-  cursor: pointer;
-  min-width: 120px;
-  text-align: center;
-}
-
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.popup-content-pave {
-  position: relative;
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  padding-top: 40px;
-  width: 90%;
-  max-width: 500px;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background-color: white;
-  border: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  color: rgb(0, 0, 0);
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-
-.close-button:hover {
-  transform: scale(1.2);
-}
-
-.cake-name-emphasis {
-  color: var(--pink-dark);
-  font-weight: 600;
-}
-
-.title {
-  font-size: 2em;
-  font-weight: 600;
-  color: var(--pink);
-}
-
-.subtitle {
-  font-size: 1em;
-  color: var(--black-light);
-}
-
-.options {
-  display: flex;
-  margin-top: 2rem;
-  gap: 2rem;
-}
-
-.option {
-  background: var(--black-light-transparent);
-  border: 1px solid var(--black-light);
-  font-size: 15px;
-  color: var(--black-light);
-  padding: 10px 0;
-  margin: .5rem 0;
-  border-radius: 50px;
-  cursor: pointer;
-  min-width: 120px;
-  white-space: normal;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.option.selected {
-  background-color: var(--black);
-  border: 1px solid var(--black);
-  color: white;
+.flavor-label {
   font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1rem;
 }
 
-.bottom {
+.flavors-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.flavor-option {
+  padding: 0.75rem;
+  background-color: var(--gray-light);
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--black);
+  width: 100%;
+}
+
+.flavor-option:hover {
+  background-color: var(--pink);
+  transform: translateY(-2px);
+}
+
+.flavor-option.selected {
+  background-color: var(--pink-light);
+  color: var(--black);
+  font-weight: 600;
+}
+
+.title-name-emphasis {
+  color: var(--pink-dark);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.bottom-add-cart {
   display: flex;
-  justify-content: right;
+  justify-content: center;
   margin-top: 2rem;
 }
 
-.next {
+.next-add-cart {
   border: none;
-  color: white;
+  color: var(--black);
   font-weight: 500;
   font-size: max(1vw, 13px);
   padding: .5vw 1.5vw;
-  background-color: var(--black);
+  background-color: var(--green);
   border-radius: 50px;
   cursor: pointer;
   transition: 0.3s;
   margin: 8px;
 }
 
-.next:disabled {
+.next-add-cart:disabled {
   background-color: var(--gray-light);
   color: var(--gray);
   cursor: not-allowed;
 }
 
+
 /* Tablet responsiveness */
 @media (max-width: 1050px) {
-  .popup-content-pave {
-    max-width: 420px;
-    padding: 15px;
-    padding-top: 35px;
+  .title-name-emphasis {
+    font-size: 1.2rem;
   }
 
-  .title {
-    font-size: 1.6em;
+  .flavors-options {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
   }
 
-  .subtitle {
-    font-size: 0.9em;
+  .flavor-option {
+    font-size: 0.9rem;
+    padding: 0.6rem;
   }
 
-  .options {
-    gap: 1.5rem;
-  }
-
-  .option {
-    font-size: 13px;
-    min-width: 100px;
-  }
-
-  .next {
+  .next-add-cart {
     font-size: 12px;
     padding: 0.4rem 1rem;
   }
@@ -162,46 +92,26 @@
 
 /* Mobile responsiveness */
 @media (max-width: 750px) {
-  .popup-content-pave {
-    max-width: 90vw;
-    padding: 12px;
-    padding-top: 35px;
-    border-radius: 8px;
-  }
-
-  .close-button {
-    width: 28px;
-    height: 28px;
+  .title-name-emphasis {
     font-size: 1rem;
   }
 
-  .title {
-    font-size: 1.3em;
+  .flavor-label {
+    font-size: 0.9rem;
   }
 
-  .subtitle {
-    font-size: 0.8em;
+  .flavors-options {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
   }
 
-  .options {
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 1rem;
+  .flavor-option {
+    font-size: 0.85rem;
+    padding: 0.5rem;
   }
 
-  .option {
-    font-size: 12px;
-    padding: 8px 0;
-    min-width: auto;
-    width: 100%;
-  }
-
-  .bottom {
-    justify-content: center;
-    margin-top: 1.5rem;
-  }
-
-  .next {
+  .next-add-cart {
     font-size: 11px;
     padding: 0.35rem 0.8rem;
     margin: 4px;
