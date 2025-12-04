@@ -87,3 +87,79 @@
   color: var(--gray);
   cursor: not-allowed;
 }
+
+/* Tablet responsiveness */
+@media (max-width: 1050px) {
+  .title-name-emphasis {
+    font-size: 1.2rem;
+  }
+
+  .simple-item-qty-row {
+    gap: 0.75rem;
+    margin: 1.2rem 0 0.5rem 0;
+  }
+
+  .qty-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .qty-input {
+    width: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .notes-textarea {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 750px) {
+  .title-name-emphasis {
+    font-size: 1rem;
+  }
+
+  .simple-item-qty-row {
+    gap: 0.5rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  .qty-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 0.9rem;
+  }
+
+  .qty-input {
+    width: 2rem;
+    font-size: 0.9rem;
+    padding: 2px 0;
+  }
+
+  .notes-section {
+    margin: 0.75rem 0;
+  }
+
+  .notes-label {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+  }
+
+  .notes-textarea {
+    width: 95%;
+    font-size: 0.85rem;
+    min-height: 35px;
+  }
+
+  .bottom-add-cart {
+    margin-top: 1.5rem;
+  }
+
+  .next-add-cart {
+    font-size: 12px;
+    padding: 0.4rem 1rem;
+    margin: 4px;
+  }
+}

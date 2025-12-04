@@ -68,11 +68,11 @@ const Cart = () => {
         <div className="cart">
             <div className="cart-items">
                 <div className="cart-items-title">
+                    <p> </p>
                     <p>Itens</p>
                     <p>Preço</p>
                     <p>Quantidade</p>
                     <p>Total</p>
-                    <p>Remover</p>
                 </div>
                 <br />
                 <hr />
@@ -85,6 +85,7 @@ const Cart = () => {
                         {cartEntries.map((item) => (
                             <div key={item._id}>
                                 <div className="cart-items-title cart-items-item">
+                                    <p className="cross" onClick={() => removeFromCart(item._id)}>x</p>
                                     <p>
                                         <strong>{item.name}</strong>
                                         {cartItemsMetadata[item._id]?.units && <div className="cart-item-notes">Unidades: {cartItemsMetadata[item._id]?.units}</div>}
@@ -97,7 +98,6 @@ const Cart = () => {
                                         <button className="qty-btn" onClick={() => updateQuantity(item._id, cartItems[item._id] + 1)}>+</button>
                                     </div>
                                     <p>R${(cartItemsMetadata[item._id]?.totalPrice ? cartItemsMetadata[item._id].totalPrice * cartItems[item._id] : item.price * cartItems[item._id]).toFixed(2)}</p>
-                                    <p className="cross" onClick={() => removeFromCart(item._id)}>x</p>
                                 </div>
                                 <hr />
                             </div>
@@ -105,6 +105,7 @@ const Cart = () => {
                         {customCakes.map((cake, idx) => (
                             <div key={"custom-" + idx}>
                                 <div className="cart-items-title cart-items-item">
+                                    <p className="cross" onClick={() => removeCustomCake(idx)}>x</p>
                                     <p>
                                         <strong>{cake.name}</strong>
                                         <div className="cart-cake-details">
@@ -122,7 +123,6 @@ const Cart = () => {
                                     <p>R${customCakePrice.toFixed(2)}</p>
                                     <p>1</p>
                                     <p>R${customCakePrice.toFixed(2)}</p>
-                                    <p className="cross" onClick={() => removeCustomCake(idx)}>x</p>
                                 </div>
                                 <hr />
                             </div>

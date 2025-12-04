@@ -31,7 +31,7 @@
 
 .cart-items-title{
     display: grid;
-    grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr 0.5fr;
+    grid-template-columns: 0.2fr 2.5fr 1fr 1fr 1fr;
     align-items: center;
     color: var(--gray-dark);
 }
@@ -54,15 +54,18 @@
 .cart-items-item .cross{
     cursor: pointer;
     color: var(--pink-dark);
+    border-radius: 1rem;
     font-size: 1rem;
     font-weight: 600;
-    padding-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cart-quantity-control {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.5rem;
 }
 
@@ -71,19 +74,25 @@
     color: white;
     border: none;
     border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    font-size: 1.2rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .qty-btn:hover {
     background-color: var(--pink-dark);
+}
+
+
+.qty-btn:hover:nth-child(3) {
+    background-color: var(--green-dark);
 }
 
 .qty-btn:active {
@@ -131,4 +140,76 @@
 
 .cart-whatsapp-btn:active {
     transform: scale(0.98);
+}
+
+@media (max-width: 1050px) {
+    .cart-items-title {
+        grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+    }
+
+    .cart-bottom {
+        margin-left: 50%;
+    }
+}
+
+@media (max-width: 750px) {
+    .cart-items-title {
+        grid-template-columns: 25px 1.2fr 0.7fr 0.85fr 0.7fr;
+        gap: 0.2rem;
+        font-size: 0.75rem;
+    }
+
+    .cart-items-title p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .cart-items-item {
+        grid-template-columns: 25px 1.2fr 0.7fr 0.85fr 0.7fr;
+        gap: 0.2rem;
+    }
+
+    .cart-quantity-control {
+        gap: 0.15rem;
+        flex-wrap: nowrap;
+    }
+
+    .qty-btn {
+        width: 1.2rem;
+        height: 1.2rem;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+        padding: 0;
+    }
+
+    .qty-display {
+        min-width: 1.2rem;
+        font-size: 0.75rem;
+    }
+
+    .cart-items-item .cross {
+        padding-left: 0;
+        font-size: 0.85rem;
+        min-width: 25px;
+        flex-shrink: 0;
+    }
+
+    .cart-bottom {
+        margin-left: 0;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .cart-whatsapp-btn {
+        width: 100%;
+    }
+
+    .cart-items-title p strong {
+        font-size: 0.8rem;
+    }
+
+    .cart-item-notes {
+        font-size: 0.65rem;
+    }
 }

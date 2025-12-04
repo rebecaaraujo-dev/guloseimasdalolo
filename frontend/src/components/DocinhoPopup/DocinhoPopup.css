@@ -112,3 +112,95 @@
   color: var(--gray);
   cursor: not-allowed;
 }
+
+/* Tablet responsiveness */
+@media (max-width: 1050px) {
+  .units-options {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .unit-option {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .price-summary {
+    margin-left: 25%;
+    width: 50%;
+  }
+
+  .price-summary p {
+    font-size: 0.8rem;
+  }
+
+  .title-name-emphasis {
+    font-size: 1.2rem;
+  }
+
+  .notes-textarea {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 750px) {
+  .units-section {
+    margin: 1rem 0;
+  }
+
+  .units-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .units-options {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .unit-option {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .price-summary {
+    margin-left: 0;
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  .price-summary p {
+    font-size: 0.75rem;
+  }
+
+  .title-name-emphasis {
+    font-size: 1rem;
+  }
+
+  .notes-section {
+    margin: 0.75rem 0;
+  }
+
+  .notes-label {
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+  }
+
+  .notes-textarea {
+    width: 95%;
+    font-size: 0.85rem;
+    min-height: 35px;
+  }
+
+  .bottom-add-cart {
+    margin-top: 1.5rem;
+  }
+
+  .next-add-cart {
+    font-size: 12px;
+    padding: 0.4rem 1rem;
+    margin: 4px;
+  }
+}

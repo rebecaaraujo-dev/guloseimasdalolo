@@ -71,3 +71,59 @@
 p{
     font-size: .8rem;
 }
+
+/* Tablet responsiveness */
+@media (max-width: 1050px) {
+  .popup-content {
+    max-width: 350px;
+    padding: 1.5rem 1rem;
+  }
+
+  .popup-item-image {
+    width: 150px;
+  }
+
+  .title {
+    font-size: 0.9rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  p {
+    font-size: 0.75rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 750px) {
+  .popup-content {
+    max-width: 90vw;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+  }
+
+  .popup-item-image {
+    width: 120px;
+    margin-bottom: 12px;
+  }
+
+  .close-button {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 0.85rem;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+  }
+
+  p {
+    font-size: 0.7rem;
+  }
+}

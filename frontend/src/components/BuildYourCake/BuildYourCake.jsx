@@ -165,10 +165,10 @@ const BuildYourCake = ({ isOpen, onClose, cakeName }) => {
                         Creme Belga
                       </li>
                       <li
-                        className={`cake-option ${selection.filling === 'Creme Belga de Côco' ? 'selected' : ''}`}
-                        onClick={() => handleSelection('filling', 'Creme Belga de Côco')}
+                        className={`cake-option ${selection.filling === 'Belga de Côco' ? 'selected' : ''}`}
+                        onClick={() => handleSelection('filling', 'Belga de Côco')}
                       >
-                        Creme Belga de Côco
+                        Belga de Côco
                       </li>
                       <li
                         className={`cake-option ${selection.filling === 'Ninho' ? 'selected' : ''}`}

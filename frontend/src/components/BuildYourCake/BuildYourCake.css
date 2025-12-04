@@ -282,3 +282,167 @@
   font-size: 1rem;
   resize: vertical;
 }
+
+@media (max-width: 1050px) {
+  .cake-popup-content {
+    max-width: 900px;
+    padding: 15px;
+    padding-top: 35px;
+  }
+
+  .cake-title,
+  .cake-subtitle {
+    font-size: 1.5em;
+    margin-left: 1rem;
+  }
+
+  .cake-section-title {
+    font-size: 1.2rem;
+  }
+
+  .cake-options,
+  .cake-options-filling {
+    gap: 1rem;
+    height: 20vw;
+  }
+
+  .cake-options-column {
+    min-width: 18%;
+    padding: 0.75rem 0;
+  }
+
+  .cake-option {
+    width: 9rem;
+    font-size: 13px;
+    padding: 8px 0;
+  }
+
+  .cake-order-summary .section-title {
+    font-size: 1.5rem;
+  }
+
+  .cake-order-summary p {
+    font-size: 1rem;
+  }
+
+  .cake-next,
+  .cake-prev {
+    font-size: 12px;
+    padding: 0.4rem 1rem;
+  }
+
+  .cake-observations-section .notes-textarea {
+    min-height: 120px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .cake-popup-content {
+    max-width: 95vw;
+    padding: 12px;
+    padding-top: 35px;
+    border-radius: 8px;
+  }
+
+  .cake-title,
+  .cake-subtitle {
+    font-size: 1.2em;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cake-section-title {
+    font-size: 1rem;
+    margin-left: 0.25rem;
+  }
+
+  .cake-options,
+  .cake-options-filling {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 0.5rem;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .cake-options-column {
+    width: calc(50% - 0.25rem);
+    height: auto;
+    padding: 0.75rem 0.25rem;
+    box-sizing: border-box;
+  }
+
+  .cake-select-filling .cake-options-column:nth-child(1) {
+    width: 100%;
+  }
+
+  .cake-section-options ul {
+    gap: 0.4rem;
+  }
+
+  .cake-option {
+    width: 8rem;
+    font-size: 12px;
+    padding: 6px 0;
+  }
+
+  .cake-option:hover {
+    transform: scale(1.02);
+  }
+
+  .cake-content {
+    padding: 0.5rem 0;
+  }
+
+  .cake-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .cake-next,
+  .cake-prev {
+    font-size: 11px;
+    padding: 0.35rem 0.8rem;
+    margin: 4px;
+  }
+
+  .cake-order-summary {
+    padding: 15px;
+    margin: 0.75rem 0;
+  }
+
+  .cake-order-summary .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cake-order-summary p {
+    font-size: 0.9rem;
+    margin: 0.35rem 0.75rem;
+  }
+
+  .cake-order-summary .bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .cake-order-summary .prev,
+  .cake-order-summary .next {
+    width: 100%;
+    font-size: 11px;
+    padding: 0.35rem 0.8rem;
+  }
+
+  .cake-observations-section {
+    margin-top: 1.5rem;
+  }
+
+  .cake-observations-section .notes-textarea {
+    min-height: 100px;
+    font-size: 0.85rem;
+  }
+}
