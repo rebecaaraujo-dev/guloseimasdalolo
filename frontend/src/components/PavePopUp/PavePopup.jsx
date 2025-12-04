@@ -1,6 +1,7 @@
 
 import React, { useState, useContext } from 'react';
 import '../Popup/Popup.css';
+import './PavePopup.css';
 import { useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
 import Popup from '../Popup/Popup';

@@ -5,19 +5,30 @@ import { StoreContext } from '../../context/StoreContext'
 
 const Cart = () => {
 
-    const { cartItems, food_list, removeFromCart, customCakes, setCustomCakes, cartItemsMetadata } = useContext(StoreContext);
+    const { cartItems, food_list, removeFromCart, updateQuantity, customCakes, setCustomCakes, cartItemsMetadata } = useContext(StoreContext);
 
     const cartEntries = food_list.filter(item => cartItems[item._id] > 0);
-    const cartTotal = cartEntries.reduce((acc, item) => acc + item.price * cartItems[item._id], 0);
+    const cartTotal = cartEntries.reduce((acc, item) => {
+        const itemMetadata = cartItemsMetadata[item._id];
+        if (itemMetadata?.totalPrice !== undefined) {
+            // For Docinhos items, use the calculated total price
+            return acc + (itemMetadata.totalPrice * cartItems[item._id]);
+        }
+        return acc + (item.price * cartItems[item._id]);
+    }, 0);
 
     const sendToWhatsApp = () => {
         let message = "Olá! Gostaria de fazer um pedido:\n";
 
         cartEntries.forEach((item) => {
             const quantity = cartItems[item._id];
-            const itemTotal = (item.price * quantity).toFixed(2);
-            const itemNotes = cartItemsMetadata[item._id]?.notes || '';
-            message += `\n*${item.name.toUpperCase()}* \n• Qtd: ${quantity} \n• Valor unitário: R$${itemTotal} `;
+            const itemMetadata = cartItemsMetadata[item._id];
+            const itemPrice = itemMetadata?.totalPrice || item.price;
+            const itemTotal = (itemPrice * quantity).toFixed(2);
+            const itemUnits = itemMetadata?.units || '';
+            const itemNotes = itemMetadata?.notes || '';
+            message += `\n*${item.name.toUpperCase()}* \n• Qtd: ${quantity} \n• Valor unitário: R$${itemPrice.toFixed(2)} `;
+            if (itemUnits) message += `\n• Unidades: ${itemUnits}`;
             if (itemNotes) message += `\n• Obs: ${itemNotes}`;
             message += `\n`;
         });
@@ -76,11 +87,16 @@ const Cart = () => {
                                 <div className="cart-items-title cart-items-item">
                                     <p>
                                         <strong>{item.name}</strong>
+                                        {cartItemsMetadata[item._id]?.units && <div className="cart-item-notes">Unidades: {cartItemsMetadata[item._id]?.units}</div>}
                                         {cartItemsMetadata[item._id]?.notes && <div className="cart-item-notes">Observações: {cartItemsMetadata[item._id]?.notes}</div>}
                                     </p>
-                                    <p>R${item.price.toFixed(2)}</p>
-                                    <p>{cartItems[item._id]}</p>
-                                    <p>R${(item.price * cartItems[item._id]).toFixed(2)}</p>
+                                    <p>R${cartItemsMetadata[item._id]?.totalPrice ? cartItemsMetadata[item._id].totalPrice.toFixed(2) : item.price.toFixed(2)}</p>
+                                    <div className="cart-quantity-control">
+                                        <button className="qty-btn" onClick={() => updateQuantity(item._id, cartItems[item._id] - 1)}>-</button>
+                                        <span className="qty-display">{cartItems[item._id]}</span>
+                                        <button className="qty-btn" onClick={() => updateQuantity(item._id, cartItems[item._id] + 1)}>+</button>
+                                    </div>
+                                    <p>R${(cartItemsMetadata[item._id]?.totalPrice ? cartItemsMetadata[item._id].totalPrice * cartItems[item._id] : item.price * cartItems[item._id]).toFixed(2)}</p>
                                     <p className="cross" onClick={() => removeFromCart(item._id)}>x</p>
                                 </div>
                                 <hr />

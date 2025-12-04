@@ -106,7 +106,7 @@ export const food_list = [
         _id: "1",
         name: "Bolo Temático",
         image: food_1,
-        price: 100,
+        price: 150,
         description: "Perfeito para qualquer ocasião, feito sob medida e decorado com todo carinho.",
         category: "Bolos"
     },
@@ -114,7 +114,7 @@ export const food_list = [
         _id: "2",
         name: "Naked Cake",
         image: food_2,
-        price: 100,
+        price: 110,
         description: "Visual rústico, massa fofinha e recheio generoso. Finalizado com frutas frescas.",
         category: "Bolos"
     }, {
@@ -128,42 +128,42 @@ export const food_list = [
         _id: "4",
         name: "Caseirinho",
         image: food_4,
-        price: 25,
+        price: 28,
         description: "Sabor de casa! Bolo simples, macio e perfeito para qualquer momento.",
         category: "Bolos"
     }, {
         _id: "5",
         name: "Bolo Vulcão",
         image: food_5,
-        price: 25,
+        price: 32,
         description: "Clássico irresistível com muito recheio escorrendo. Serve de 6 a 8 fatias.",
         category: "Bolos"
     }, {
         _id: "6",
         name: "Cupcake",
         image: food_6,
-        price: 20,
+        price: 8,
         description: "Fofo, delicado e cheio de sabor. Perfeito para festas ou para matar a vontade de doce.",
         category: "Bolos"
     }, {
         _id: "7",
         name: "Brownie Doce de Leite",
         image: food_7,
-        price: 10,
+        price: 12,
         description: "Chocolate intenso com recheio cremoso de doce de leite. Pura indulgência.",
         category: "Brownies"
     }, {
         _id: "8",
         name: "Brownie Brigadeiro",
         image: food_8,
-        price: 10,
+        price: 12,
         description: "Brownie macio com brigadeiro cremoso. Feito para os amantes de chocolate.",
         category: "Brownies"
     }, {
         _id: "9",
         name: "Mini Brownie",
         image: food_9,
-        price: 10,
+        price: 75,
         description: "Pequenos no tamanho, enormes no sabor. Uma opção prática e deliciosa.",
         category: "Brownies"
      }, {
@@ -177,21 +177,21 @@ export const food_list = [
         _id: "11",
         name: "Banoffee",
         image: food_11,
-        price: 50,
+        price: 90,
         description: "Base crocante, banana fresquinha e doce de leite cremoso. Um clássico que não tem erro.",
         category: "Sobremesas"
     }, {
         _id: "12",
-        name: "Torta",
+        name: "Torta (Fatia)",
         image: food_12,
-        price: 50,
+        price: 18,
         description: "Massa leve com recheio cremoso. Uma sobremesa prática e sempre deliciosa.",
         category: "Sobremesas"
      }, {
         _id: "13",
         name: "Brigadeiro",
         image: food_13,
-        price: 50,
+        price: 15,
         description: "Tradicional, cremoso e feito com chocolate de verdade. Impossível comer um só.",
         category: "Docinhos"
     },
@@ -199,7 +199,7 @@ export const food_list = [
         _id: "14",
         name: "Beijinho",
         image: food_14,
-        price: 50,
+        price: 15,
         description: "Docinho macio com sabor marcante de coco. Um clássico das festinhas.",
         category: "Docinhos"
     }

@@ -59,6 +59,43 @@
     padding-left: 1rem;
 }
 
+.cart-quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.qty-btn {
+    background-color: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-btn:hover {
+    background-color: var(--pink-dark);
+}
+
+.qty-btn:active {
+    transform: scale(0.95);
+}
+
+.qty-display {
+    min-width: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
 .cart-bottom {
     display: flex;
     flex-direction: column;

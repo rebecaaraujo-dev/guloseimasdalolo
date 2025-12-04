@@ -7,6 +7,8 @@ import { StoreContext } from '../../context/StoreContext'
 import BuildYourCake from '../BuildYourCake/BuildYourCake'
 import PavePopup from '../PavePopUp/PavePopup'
 import SimpleItemPopup from '../SimpleItemPopup/SimpleItemPopup'
+import DocinhoPopup from '../DocinhoPopup/DocinhoPopup'
+import BrowniePopup from '../BrowniePopup/BrowniePopup'
 
 
 const FoodItem = ({id,name,price,description,image,category}) => {
@@ -31,7 +33,13 @@ const FoodItem = ({id,name,price,description,image,category}) => {
       {id === "10" && name === "Pavê" && (
         <PavePopup isOpen={isPopupOpen} onClose={handleClosePopup} item={{id, name, price, description, image, _id: id}} />
       )}
-      {category !== 'Bolos' && !(id === "10" && name === "Pavê") && (
+      {category === 'Docinhos' && (
+        <DocinhoPopup isOpen={isPopupOpen} onClose={handleClosePopup} item={{id, name, price, description, image, _id: id}} />
+      )}
+      {id === "9" && name === "Mini Brownie" && (
+        <BrowniePopup isOpen={isPopupOpen} onClose={handleClosePopup} item={{id, name, price, description, image, _id: id}} />
+      )}
+      {category !== 'Bolos' && !(id === "10" && name === "Pavê") && category !== 'Docinhos' && !(id === "9" && name === "Mini Brownie") && (
         <SimpleItemPopup isOpen={isPopupOpen} onClose={handleClosePopup} item={{id, name, price, description, image, _id: id}} />
       )}
       <div className='food-item' onClick={handleClick}>

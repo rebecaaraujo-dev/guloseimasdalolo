@@ -26,6 +26,14 @@ const StoreContextProvider = (props) =>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
     }
 
+    const updateQuantity = (itemId, quantity) => {
+        if (quantity <= 0) {
+            setCartItems((prev)=>({...prev,[itemId]:0}))
+        } else {
+            setCartItems((prev)=>({...prev,[itemId]:quantity}))
+        }
+    }
+
     useEffect(()=>{
         console.log(cartItems);
     },[cartItems])
@@ -40,6 +48,7 @@ const StoreContextProvider = (props) =>{
         setCartItems,
         addToCart,
         removeFromCart,
+        updateQuantity,
         cartItemsMetadata,
         setCartItemsMetadata,
         customCakes,
