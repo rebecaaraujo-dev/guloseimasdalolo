@@ -113,7 +113,6 @@
   cursor: not-allowed;
 }
 
-/* Tablet responsiveness */
 @media (max-width: 1050px) {
   .units-options {
     grid-template-columns: repeat(3, 1fr);
@@ -143,7 +142,6 @@
   }
 }
 
-/* Mobile responsiveness */
 @media (max-width: 750px) {
   .units-section {
     margin: 1rem 0;
